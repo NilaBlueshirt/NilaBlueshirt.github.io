@@ -1,152 +1,323 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Nil Tianchen Mu",
+    "email": "nil.mu@asu.edu",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://NilaBlueshirt.github.io",
+    "summary": "HPC Systems Administrator at Arizona State University accelerating research through system optimization, research software engineering, user collaboration, and community education.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
+      "city": "Tempe",
       "countryCode": "US",
-      "region": ""
+      "region": "AZ"
     },
     "profiles": [
       {
         "network": "Google Scholar",
         "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.com/citations?user=_VNfRwIAAAAJ&hl=en"
       },
       {
         "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
+        "username": "0000-0002-0271-0941",
+        "url": "https://orcid.org/0000-0002-0271-0941"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "NilaBlueshirt",
+        "url": "https://github.com/NilaBlueshirt"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "nilmu",
+        "url": "https://www.linkedin.com/in/nilmu"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "name": "Research Computing, Research Technology Office, Arizona State University",
+      "position": "HPC Systems Administrator",
+      "location": "Tempe, AZ",
+      "startDate": "2024-01",
+      "endDate": "",
+      "summary": "Accelerate research computing through system optimization and research software engineering.",
+      "highlights": [
+        "Port bioinformatics LLMs and scientific software to Intel Gaudi2 accelerators and generate accompanying benchmark data.",
+        "Develop benchmarking and post-maintenance testing software for heterogeneous HPC clusters.",
+        "Tune workflow-management system performance and scheduling on Slurm-based HPC.",
+        "Refactor genomic sequencing software to modern nf-core standards, contributing to the Earth BioGenome Project.",
+        "Develop a large-scale Nextflow-based virus detection and discovery pipeline with the NASA OSDR Microbiome Analysis Working Group.",
+        "Integrate the HPC account management system with the university registration database for automated account provisioning.",
+        "Customize the Open OnDemand web portal to support scientific applications and agentic AI functionality.",
+        "Manage HPC software stacks and databases; provide real-time troubleshooting for job, software, and hardware issues."
+      ]
+    },
+    {
+      "name": "ASU Biodesign Institute, Efrem Lim Lab",
+      "position": "Graduate Research Assistant",
+      "location": "Tempe, AZ",
+      "startDate": "2022-01",
+      "endDate": "2023-12",
+      "summary": "Machine-learning and genomics pipelines for microbiome classification and viral surveillance.",
+      "highlights": [
+        "Developed an explainable neural network pipeline for microbiome-based classification of COVID-19 patient samples (400 features), using a multilayer perceptron (mean AUC 0.75) with SHAP for feature importance analysis.",
+        "Designed a DBSCAN-based clustering workflow to establish the true-positive threshold for KrakenUniq classification output.",
+        "Contributed to an open-source Python package for model-agnostic feature reduction methods.",
+        "Served on the Arizona Department of Health Services COVID-19 Sequencing Project team; built an ETL pipeline managing sequencing data for over one-third of the Arizona patient population.",
+        "Built a generalizable genomic workflow that identified two novel bat coronaviruses from 250 raw samples on ASU supercomputing resources."
+      ]
+    },
+    {
+      "name": "ASU School of Sustainable Engineering and the Built Environment",
+      "position": "Research Assistant",
+      "location": "Tempe, AZ",
+      "startDate": "2021-06",
+      "endDate": "2022-01",
+      "summary": "IoT sensing and real-time data dashboards for mobile weather stations.",
+      "highlights": [
+        "Connected twelve analog and digital environmental sensors to Arduino Uno and Raspberry Pi platforms to build IoT sensor enclosures for mobile weather stations.",
+        "Built a real-time Adafruit data dashboard integrating MQTT, Google Drive, and SQLite for data logging and visualization."
+      ]
+    },
+    {
+      "name": "ASU School of Mathematical and Statistical Sciences",
+      "position": "Research Assistant",
+      "location": "Tempe, AZ",
+      "startDate": "2020-09",
+      "endDate": "2021-06",
+      "summary": "Machine learning curriculum design and COVID-19 mobility modeling.",
+      "highlights": [
+        "Designed an undergraduate machine learning curriculum (MAT 400-level) that has been taught at ASU since Fall 2021.",
+        "Processed 50,000 rows of U.S. population mobility data using the spectral clustering algorithm to model COVID-19 transmission patterns."
+      ]
+    },
+    {
+      "name": "Autowise.ai & Boschung",
+      "position": "Software Development and Testing Intern",
+      "location": "Chandler, AZ & Chicago, IL",
+      "startDate": "2020-05",
+      "endDate": "2020-08",
+      "summary": "Software and hardware testing for a self-driving robotic street sweeper.",
+      "highlights": [
+        "Designed and executed software and hardware tests for a self-driving robotic street sweeper, resolving issues identified during virtual and real-world road trials.",
+        "Reviewed and managed testing data, providing feedback and recommendations to the R&D and Business teams.",
+        "Led relocation of the full test set from Chandler to Chicago, including establishing a new test environment, producing new LiDAR maps, and training personnel for ongoing operations."
+      ]
+    },
+    {
+      "name": "ASU Biodesign Institute",
+      "position": "Volunteer Research Assistant",
+      "location": "Tempe, AZ",
+      "startDate": "2019-09",
+      "endDate": "2020-01",
+      "summary": "NLP and machine learning for gene associations and protein-sequence analysis.",
+      "highlights": [
+        "Applied natural language processing and machine learning algorithms to find associations among genes across more than 1,700 biomedical papers, using Python and Excel.",
+        "Extracted and cleaned protein sequences from over 3,500 records in the NCBI database, using Biopython, Pandas, and NumPy.",
+        "Adapted multiple-sequence alignment, motif searching, and text-mining algorithms to cluster and identify universal features among antibody protein sequences."
+      ]
+    },
+    {
+      "name": "ASU Biodesign Center for Environmental Health Engineering (with Dr. Matthew Scotch)",
+      "position": "Research Assistant — ZooPhy Data Expansion Project",
+      "location": "Tempe, AZ",
+      "startDate": "2019-09",
+      "endDate": "2019-12",
+      "summary": "Climate-data integration for phylogeographic reconstruction of virus spread.",
+      "highlights": [
+        "Developed the Geoname Climate Data Integration System (GCIS) for ZooPhy, supporting the reconstruction of virus spread through phylogeography.",
+        "Integrated NOAA GHCN temperature and precipitation data, cleaned and parsed into a PostgreSQL relational database, to enhance ZooPhy's epidemiological and phylogeographic capabilities.",
+        "Built a command-line interface to manage the databases."
+      ]
+    },
+    {
+      "name": "Mayo Clinic",
+      "position": "Research Affiliate",
+      "location": "Phoenix, AZ",
+      "startDate": "2018-09",
+      "endDate": "2019-04",
+      "summary": "Clinical field observation and decision-support research in biomedical informatics.",
+      "highlights": [
+        "Conducted field observations across Mayo Clinic ambulatory and ancillary care settings to analyze clinical-environment issues and observe provider–EHR interaction during migration to the Epic system, reporting findings in TOYOTA A3 problem-solving format.",
+        "Proposed a Clinical Decision Support System (CDSS) based on Prescription Drug Monitoring Programs (PDMPs) for patient pain management; presented as a poster speaker at the 5th Annual Mayo Clinic–ASU BMI/BMD Student Poster and Employer Networking Event (April 2019).",
+        "Completed a two-month intensive introduction to medical terminology, human anatomy, and physiology."
+      ]
+    },
+    {
+      "name": "Chinese Academy of Sciences",
+      "position": "Research Assistant",
+      "location": "Wuhan, Hubei, China",
+      "startDate": "2014-04",
+      "endDate": "2018-01",
+      "summary": "Cell biology and prion protein signaling research.",
+      "highlights": [
+        "Designed and conducted cell-biology and BSL-2 animal experiments, including the handling of infectious materials; co-authored a paper published in the Journal of Biological Chemistry (2017).",
+        "Studied how GPI anchor system genes regulate the formation of PrP in AsPC-1 cells.",
+        "Showed that PrP responds to the TNFα-triggered NF-κB signaling pathway by preventing the deubiquitinase activity of CYLD on RIP1 and TRAF2 (published).",
+        "Investigated how PrP expression influences the establishment of Herpes Simplex Virus Type 1 latency.",
+        "Techniques: fluorescence microscopy, UV-Vis spectrophotometry, RT-PCR/qPCR/PCR, CRISPR/Cas9, molecular cloning, SDS-PAGE, Native PAGE, Western blot, Co-IP, IP, and ELISA."
+      ]
+    },
+    {
+      "name": "iGEM Competition, Team WHU-China",
+      "position": "Team Leader / Slides & Poster Speaker",
+      "location": "Wuhan, China",
+      "startDate": "2014-01",
+      "endDate": "2015-09",
+      "summary": "Synthetic-biology team lead; Silver Medal at the iGEM 2015 Jamboree.",
+      "highlights": [
+        "Led a synthetic-biology project constructing a DNA criticality-detector circuit in E. coli as an automatic medicine-dosage threshold for addressing human dental caries.",
+        "Awarded a Silver Medal at the iGEM 2015 Jamboree."
+      ]
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "Arizona State University",
+      "area": "Computer Science (Biomedical Informatics)",
+      "studyType": "M.S.",
+      "startDate": "2022",
+      "endDate": "2023",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
+      "institution": "Arizona State University",
+      "area": "Computer Science",
+      "studyType": "B.S.",
+      "startDate": "2020",
+      "endDate": "2022",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "institution": "Wuhan University",
+      "area": "Biology",
+      "studyType": "B.S.",
+      "startDate": "2013",
+      "endDate": "2017",
       "gpa": null,
       "courses": []
     }
   ],
-  "skills": [],
-  "languages": [],
+  "skills": [
+    {
+      "name": "High-Performance Computing",
+      "keywords": ["HPC", "Slurm", "Linux cluster administration", "benchmarking"]
+    },
+    {
+      "name": "Research Software Engineering",
+      "keywords": ["Nextflow", "nf-core", "workflow optimization", "Open OnDemand"]
+    },
+    {
+      "name": "Bioinformatics & Machine Learning",
+      "keywords": ["genomics pipelines", "MLP", "CatBoost", "SHAP", "DBSCAN", "Python"]
+    }
+  ],
+  "languages": [
+    { "language": "English", "fluency": "Full professional" },
+    { "language": "Chinese", "fluency": "Native / bilingual" }
+  ],
   "interests": [],
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Longitudinal dynamics of the nasopharyngeal microbiome in response to SARS-CoV-2 Omicron variant and HIV infection in Kenyan women and their children",
+      "publisher": "mSystems, American Society for Microbiology",
+      "releaseDate": "2025-05-01",
+      "website": "",
+      "summary": "A longitudinal study of how the nasopharyngeal microbiome responds to SARS-CoV-2 Omicron infection and HIV status in Kenyan women and their children."
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "Baseline Sequencing Surveillance of Public Clinical Testing, Hospitals, and Community Wastewater Reveals Rapid Emergence of SARS-CoV-2 Omicron Variant of Concern in Arizona, USA",
+      "publisher": "mBio, American Society for Microbiology",
+      "releaseDate": "2023-02-01",
+      "website": "",
+      "summary": "Genomic surveillance across clinical testing, hospitals, and community wastewater capturing the rapid emergence of the SARS-CoV-2 Omicron variant of concern in Arizona."
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "Prion protein is required for tumor necrosis factor alpha (TNFα)-triggered nuclear factor kappa B (NF-κB) signaling and cytokine production",
+      "publisher": "Journal of Biological Chemistry",
+      "releaseDate": "2017-09-01",
+      "website": "",
+      "summary": "Prion protein is required for TNFα-triggered NF-κB signaling by preventing the deubiquitinase activity of CYLD on RIP1 and TRAF2. JBC Recommended Reads, Oct 2017."
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Provisioning a Large-Scale AI Platform Composed of Intel Gaudi2 Accelerators at Arizona State University",
+      "publisher": "PEARC (Practice and Experience in Advanced Research Computing)",
+      "releaseDate": "2026-07-01",
+      "website": "",
+      "summary": "A case study on standing up and operating a large-scale AI platform built on Intel Gaudi2 accelerators. Long paper."
+    },
+    {
+      "name": "Ten Practices for Refactoring Scientific Pipelines to nf-core DSL2 on Shared Slurm HPC",
+      "publisher": "US-RSE",
+      "releaseDate": "2026-10-01",
+      "website": "",
+      "summary": "Ten practical recommendations for refactoring scientific pipelines to nf-core DSL2 on shared, Slurm-based HPC. Long paper."
+    },
+    {
+      "name": "Optimizing Nextflow-based Software on Shared HPC Resources: A Case Study with make_lastz_chains",
+      "publisher": "US-RSE",
+      "releaseDate": "2025-10-01",
+      "website": "",
+      "summary": "A case study on optimizing Nextflow-based software for shared HPC resources using the make_lastz_chains pipeline. Long paper."
     }
   ],
   "presentations": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
+      "name": "HPL (Linpack) and Other Popular Benchmarks on Heterogeneous HPC Clusters",
+      "event": "RMACC HPC Symposium",
+      "date": "2026-05-01",
+      "location": "Boulder, CO, USA",
       "description": ""
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
+      "name": "Tuning Workflow Management Systems for Shared HPC Resources",
+      "event": "RMACC HPC Symposium",
+      "date": "2026-05-02",
+      "location": "Boulder, CO, USA",
       "description": ""
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
+      "name": "A Clinical Decision Support System Based on Prescription Drug Monitoring Programs for Patient Pain Management",
+      "event": "5th Annual Mayo Clinic–ASU BMI/BMD Student Poster and Employer Networking Event",
+      "date": "2019-04-01",
+      "location": "Phoenix, AZ, USA",
+      "description": "Poster."
     },
     {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
+      "name": "A DNA Criticality-Detector Circuit in E. coli for Automatic Medicine-Dosage Thresholds",
+      "event": "International Genetically Engineered Machine (iGEM) 2015 Jamboree",
+      "date": "2015-09-01",
+      "location": "Boston, MA, USA",
+      "description": "Poster & slides, Team WHU-China. Silver Medal."
     }
   ],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
+      "course": "Undergraduate Machine Learning Curriculum (MAT 400-level)",
+      "institution": "Arizona State University, School of Mathematical and Statistical Sciences",
+      "date": "2021-08-01",
       "role": "Undergraduate course",
-      "description": ""
+      "description": "Designed a MAT 400-level machine learning curriculum taught at ASU since Fall 2021."
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "course": "Certified Instructor, The Carpentries",
+      "institution": "The Carpentries",
+      "date": "2024-01-01",
+      "role": "Workshops",
+      "description": "Teaching foundational computing and data skills to researchers through hands-on workshops."
+    },
+    {
+      "course": "Mentor — Tuning Workflow Management Systems on HPC",
+      "institution": "Cyberinfrastructure Community-wide Mentorship Network (CCMNet)",
+      "date": "2026-01-01",
+      "role": "Mentorship",
+      "description": "Led a mentorship project on tuning workflow-management systems on HPC."
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "portfolio": []
 }
