@@ -25,15 +25,15 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Nil Tianchen Mu"
-  pronouns         : # example: "she/her"
+  pronouns         : "he/him"
   bio              : "HPC Systems Administrator accelerating research through system optimization, research software engineering, and community education."
   location         : "Tempe, AZ"
   employer         : "Arizona State University"
-  uri              : # URL
+  uri              : "https://search.asu.edu/profile/3306873"
   email            : "nil.mu@asu.edu"
 
   # Academic websites
-  academia         : # URL
+  academia         : 
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=_VNfRwIAAAAJ&hl=en"
   inspire-hep      : # URL
@@ -42,7 +42,7 @@ author:
   semantic         : # URL
   ssrn             : # URL
   pubmed           : # URL
-  researchgate     : # URL
+  researchgate     : "https://www.researchgate.net/profile/Nil-Mu"
   scopus           : # URL
   zotero           : # URL
 
