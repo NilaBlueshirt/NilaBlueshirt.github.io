@@ -7,4 +7,5 @@ excerpt: 'A longitudinal study of how the nasopharyngeal microbiome responds to 
 date: 2025-05-01
 venue: 'mSystems, American Society for Microbiology'
 citation: 'Longitudinal dynamics of the nasopharyngeal microbiome in response to SARS-CoV-2 Omicron variant and HIV infection in Kenyan women and their children. <i>mSystems</i>, American Society for Microbiology (May 2025).'
+paperurl: https://journals.asm.org/doi/pdf/10.1128/msystems.01568-24
 ---

@@ -7,4 +7,5 @@ excerpt: 'A case study on standing up and operating a large-scale AI platform bu
 date: 2026-07-01
 venue: 'Practice and Experience in Advanced Research Computing (PEARC)'
 citation: 'Provisioning a Large-Scale AI Platform Composed of Intel Gaudi2 Accelerators at Arizona State University. <i>PEARC</i> (2026). Long paper.'
+paperurl: https://dl.acm.org/doi/10.1145/3785462.3815814
 ---

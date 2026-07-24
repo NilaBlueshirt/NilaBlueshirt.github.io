@@ -7,4 +7,5 @@ excerpt: 'Genomic surveillance across clinical testing, hospitals, and community
 date: 2023-02-01
 venue: 'mBio, American Society for Microbiology'
 citation: 'Baseline Sequencing Surveillance of Public Clinical Testing, Hospitals, and Community Wastewater Reveals Rapid Emergence of SARS-CoV-2 Omicron Variant of Concern in Arizona, USA. <i>mBio</i>, American Society for Microbiology (Feb 2023).'
+paperurl: https://journals.asm.org/doi/pdf/10.1128/mbio.03101-22
 ---
