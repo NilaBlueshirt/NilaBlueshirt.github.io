@@ -19,4 +19,21 @@
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="var(--global-bg-color)"/>
 
+<!-- Light-mode-only page background image.
+     - Drop your image at /images/background.jpg (or change the filename below).
+     - The white gradient layered on top is a readability veil; raise its alpha
+       (e.g. 0.90) to fade the image more, lower it (e.g. 0.60) to make it bolder.
+     - This rule is scoped to light mode only, so dark mode keeps its solid background. -->
+<style>
+  html:not([data-theme="dark"]) body {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)),
+      url("{{ base_path }}/images/background.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+</style>
+
 <!-- end custom head snippets -->

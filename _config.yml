@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Nil Tianchen Mu"
+title                    : "Nil T. Mu"
 title_separator          : "-"
 name                     : &name "Nil Tianchen Mu"
 description              : &description "Nil Tianchen Mu — HPC Systems Administrator at Arizona State University, working in research software engineering, bioinformatics, and AIOps."   # Update this with a general description of your site, this is the default if not overridden by a page
