@@ -1,0 +1,20 @@
+---
+layout: archive
+title: "Sharing"
+permalink: /sharing/
+author_profile: true
+hide_title: true
+redirect_from:
+  - /teaching/
+---
+
+{% include base_path %}
+
+{% assign entries = site.teaching | sort: "date" | reverse %}
+<div class="research-grid" data-masonry>
+  {% for post in entries %}
+    {% include research-card.html %}
+  {% endfor %}
+</div>
+
+<script src="{{ base_path }}/assets/js/masonry.js" defer></script>

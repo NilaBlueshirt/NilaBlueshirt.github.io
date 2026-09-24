@@ -5,8 +5,6 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
-  - /sharing/
-  - /teaching/
 ---
 
 I am a **High-Performance Computing (HPC) Systems Administrator** in [Research Computing](https://cores.research.asu.edu/computing-and-data-services/research-computing/about/) at the [Research Technology Office](https://cores.research.asu.edu/), Arizona State University, where my work centers on high-performance computing for scientific discovery. Driven by a passion for science rooted in my bioinformatics background, I work to accelerate research through system optimization, research software engineering, user collaboration, and community education.
@@ -25,4 +23,4 @@ Trained as a computational biologist, my earlier research applied explainable ma
 
 I hold an M.S. in Computer Science (Biomedical Informatics) and a B.S. in Computer Science from Arizona State University, and a B.S. in Biology from Wuhan University. My peer-reviewed research has appeared in *mSystems*, *mBio*, and the *Journal of Biological Chemistry*, with conference contributions to PEARC, US-RSE, and RMACC.
 
-You can browse my [research](/research/) or read my full [curriculum vitae](/cv/). Feel free to reach out at [nil.mu@asu.edu](mailto:nil.mu@asu.edu).
+You can browse my [research](/research/) and [sharing](/sharing/), or read my full [curriculum vitae](/cv/). Feel free to reach out at [nil.mu@asu.edu](mailto:nil.mu@asu.edu).
