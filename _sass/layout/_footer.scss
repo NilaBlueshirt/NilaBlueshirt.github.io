@@ -11,6 +11,10 @@ body {
 
 #main {
   flex: 1 0 auto;
+  /* As a flex item with auto side margins, #main would otherwise shrink to
+     fit-content and collapse short pages (e.g. Sharing) to less than the
+     container width. */
+  width: 100%;
 }
 
 .page__footer {
