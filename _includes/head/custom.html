@@ -2,6 +2,24 @@
 
 <!-- start custom head snippets -->
 
+<!-- Apply the saved theme before first paint to avoid a white flash when
+     navigating between pages in dark mode (mirrors setTheme in _main.js). -->
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("theme"); } catch (e) { t = null; }
+    if (t !== "dark" && t !== "light") {
+      t = document.documentElement.getAttribute("data-theme") ||
+        (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    }
+    if (t === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+  }());
+</script>
+
 <!-- Support for Academicons -->
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"></noscript>

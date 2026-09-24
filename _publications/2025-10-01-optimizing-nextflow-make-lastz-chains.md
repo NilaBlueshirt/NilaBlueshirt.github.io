@@ -3,7 +3,7 @@ title: "Optimizing Nextflow-based Software on Shared HPC Resources: A Case Study
 collection: publications
 category: conferences
 permalink: /publication/2025-10-01-optimizing-nextflow-make-lastz-chains
-excerpt: 'A case study on optimizing Nextflow-based software for shared HPC resources, using the make_lastz_chains genome-alignment pipeline as a worked example.'
+excerpt: 'Practical lessons from supporting the make_lastz_chains genome-alignment pipeline on ASU supercomputers, where Nextflow submits many small Slurm jobs that erode a user''s Fairshare score and stretch queue waits. Covers scheduling tactics, Fairshare impact, and reliably capturing Slurm errors, aimed at researchers, RSEs, and HPC support teams.'
 date: 2025-10-01
 venue: 'US Research Software Engineer Association (US-RSE)'
 related_talk: /talks/2026-05-02-tuning-workflow-management-systems-shared-hpc

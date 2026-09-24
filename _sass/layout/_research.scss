@@ -9,15 +9,19 @@
 }
 
 .research-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 1.25em;
-  align-items: start;
+  /* masonry-style tiling: cards keep their own height and pack tightly */
+  columns: 20em;
+  column-gap: 1.25em;
 }
 
 .research-card {
+  position: relative;
   display: flex;
   flex-direction: column;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin: 0 0 1.25em;
   padding: 1.4em 1.5em;
   border: 1px solid var(--global-border-color);
   border-radius: 12px;
@@ -30,7 +34,15 @@
     transform: translateY(-2px) scale(1.02);
     border-color: var(--global-dark-border-color);
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+    z-index: 10;
+  }
+
+  /* square off the bottom while the description panel extends the card */
+  &:hover:has(.research-card__excerpt),
+  &:focus-within:has(.research-card__excerpt),
+  &:target:has(.research-card__excerpt) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   /* highlight when jumped to via a "Related …" cross-link */
@@ -118,28 +130,35 @@
     color: var(--global-fig-caption-color);
   }
 
-  /* hidden in the minimal state; revealed when the card is hovered,
-     focused, or targeted by a cross-link */
+  /* hidden in the minimal state; on hover/focus/cross-link target it unfolds
+     below the card as an attached panel, overlapping neighbors instead of
+     shifting the tiled layout. Full text, no truncation. */
   .research-card__excerpt {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+    z-index: 5;
     margin: 0;
+    padding: 0.9em 1.5em 1.2em;
+    border: 1px solid var(--global-dark-border-color);
+    border-top: 0;
+    border-radius: 0 0 12px 12px;
+    background-color: var(--global-bg-color);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
     font-size: 0.85em;
     line-height: 1.6;
     color: var(--global-text-color);
-    transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
   }
 
   &:hover .research-card__excerpt,
   &:focus-within .research-card__excerpt,
   &:target .research-card__excerpt {
-    max-height: 8em;
-    opacity: 0.8;
-    margin: 0.8em 0 0;
+    opacity: 1;
+    visibility: visible;
   }
 
   .research-card__links {
@@ -307,12 +326,17 @@
   color: var(--global-text-color);
 }
 
-/* touch devices have no hover: keep the extra info visible */
+/* touch devices have no hover: keep the description in the card flow */
 @media (hover: none) {
   .research-card .research-card__excerpt {
-    max-height: none;
-    opacity: 0.8;
+    position: static;
+    opacity: 0.85;
+    visibility: visible;
     margin: 0.8em 0 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 }
 
@@ -331,10 +355,11 @@
 
 @include breakpoint(max-width $small) {
   .research-grid {
-    gap: 1em;
+    column-gap: 1em;
   }
 
   .research-card {
+    margin-bottom: 1em;
     padding: 1.2em 1.25em;
   }
 }

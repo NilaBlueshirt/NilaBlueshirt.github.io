@@ -2,6 +2,17 @@
    FOOTER
    ========================================================================== */
 
+/* Pin the footer to the bottom of the viewport on short pages */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#main {
+  flex: 1 0 auto;
+}
+
 .page__footer {
   @include clearfix;
   color: var(--global-text-color-light);

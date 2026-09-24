@@ -3,7 +3,7 @@ title: "Baseline Sequencing Surveillance of Public Clinical Testing, Hospitals, 
 collection: publications
 category: manuscripts
 permalink: /publication/2023-02-01-baseline-sequencing-surveillance-omicron-arizona
-excerpt: 'Genomic surveillance across clinical testing, hospitals, and community wastewater capturing the rapid emergence of the SARS-CoV-2 Omicron variant of concern in Arizona.'
+excerpt: 'Baseline genomic surveillance that tracked SARS-CoV-2 across public clinical testing, hospitals, and community wastewater in Arizona, capturing the rapid takeover by the Omicron variant of concern. Pairing the three sampling streams shows how quickly a new variant can rise to dominance in a community.'
 date: 2023-02-01
 venue: 'mBio, American Society for Microbiology'
 citation: 'Baseline Sequencing Surveillance of Public Clinical Testing, Hospitals, and Community Wastewater Reveals Rapid Emergence of SARS-CoV-2 Omicron Variant of Concern in Arizona, USA. <i>mBio</i>, American Society for Microbiology (Feb 2023).'

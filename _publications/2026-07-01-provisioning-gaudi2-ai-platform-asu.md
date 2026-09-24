@@ -3,7 +3,7 @@ title: "Provisioning a Large-Scale AI Platform Composed of Intel Gaudi2 Accelera
 collection: publications
 category: conferences
 permalink: /publication/2026-07-01-provisioning-gaudi2-ai-platform-asu
-excerpt: 'A case study on standing up and operating a large-scale AI platform built on Intel Gaudi2 accelerators for research computing at Arizona State University.'
+excerpt: 'A case study on provisioning and operating a large-scale AI platform composed of Intel Gaudi2 accelerators for research computing at Arizona State University, presented at PEARC 2026.'
 date: 2026-07-01
 venue: 'Practice and Experience in Advanced Research Computing (PEARC)'
 citation: 'Provisioning a Large-Scale AI Platform Composed of Intel Gaudi2 Accelerators at Arizona State University. <i>PEARC</i> (2026). Long paper.'
