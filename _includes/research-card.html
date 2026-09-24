@@ -9,38 +9,51 @@
 {% comment %} A publication and a talk can be paired from either side:
     - publication frontmatter: related_talk: /talks/<permalink>
     - talk frontmatter:        related_pub: /publication/<permalink>
-    Paired talks are folded into the publication's card. {% endcomment %}
-{% assign paired_talk = nil %}
+    Each renders as its own card; paired cards cross-link via on-page anchors. {% endcomment %}
+{% assign related_item = nil %}
 {% if post.collection == "publications" %}
+  {% assign related_kind = "talk" %}
   {% if post.related_talk %}
-    {% assign paired_talk = site.talks | where: "permalink", post.related_talk | first %}
+    {% assign related_item = site.talks | where: "permalink", post.related_talk | first %}
   {% endif %}
-  {% unless paired_talk %}
-    {% assign paired_talk = site.talks | where: "related_pub", post.permalink | first %}
+  {% unless related_item %}
+    {% assign related_item = site.talks | where: "related_pub", post.permalink | first %}
+  {% endunless %}
+{% else %}
+  {% assign related_kind = "paper" %}
+  {% if post.related_pub %}
+    {% assign related_item = site.publications | where: "permalink", post.related_pub | first %}
+  {% endif %}
+  {% unless related_item %}
+    {% assign related_item = site.publications | where: "related_talk", post.permalink | first %}
   {% endunless %}
 {% endif %}
 
-<article class="research-card" itemscope itemtype="http://schema.org/CreativeWork">
-  <p class="research-card__meta">
-    <time itemprop="datePublished" datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%Y" }}</time>
-    {% if post.venue %}<span aria-hidden="true">&middot;</span> <span class="research-card__venue">{{ post.venue }}</span>{% endif %}
-    {% if post.collection == "talks" and post.type %}<span class="research-card__badge">{{ post.type | escape }}</span>{% endif %}
+{% if post.collection == "publications" %}
+  {% assign cat_info = site.publication_category[post.category] %}
+  {% assign tag_label = cat_info.tag | default: cat_info.title | default: "Publication" %}
+  {% assign tag_mod = post.category | default: "publication" %}
+{% else %}
+  {% assign tag_label = post.type | default: "Talk" %}
+  {% assign tag_mod = "talks" %}
+{% endif %}
+
+<article id="{{ post.permalink | slugify }}" class="research-card" itemscope itemtype="http://schema.org/CreativeWork">
+  <p class="research-card__eyebrow">
+    <span class="research-card__tag research-card__tag--{{ tag_mod }}">{{ tag_label | escape }}</span>
+    <time class="research-card__year" itemprop="datePublished" datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%Y" }}</time>
   </p>
 
   <h3 class="research-card__title" itemprop="headline">
     <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ r_title }}</a>
   </h3>
 
-  {% if post.excerpt %}
-    <p class="research-card__excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html }}</p>
+  {% if post.venue %}
+    <p class="research-card__venue">{{ post.venue }}</p>
   {% endif %}
 
-  {% if paired_talk %}
-    <div class="research-card__related">
-      <span class="research-card__related-label"><i class="fas fa-person-chalkboard" aria-hidden="true"></i> Related talk</span>
-      <a class="research-card__related-title" href="{{ base_path }}{{ paired_talk.url }}">{{ paired_talk.title }}</a>
-      <span class="research-card__related-meta">{% if paired_talk.type %}{{ paired_talk.type | escape }} &middot; {% endif %}{{ paired_talk.venue }} &middot; {{ paired_talk.date | date: "%Y" }}</span>
-    </div>
+  {% if post.excerpt %}
+    <p class="research-card__excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html }}</p>
   {% endif %}
 
   <div class="research-card__links">
@@ -50,9 +63,6 @@
     {% if post.slidesurl %}
       <a class="research-card__link" href="{{ post.slidesurl }}" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i>Slides</a>
     {% endif %}
-    {% if paired_talk.slidesurl %}
-      <a class="research-card__link" href="{{ paired_talk.slidesurl }}" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i>Talk Slides</a>
-    {% endif %}
     {% if post.bibtexurl %}
       <a class="research-card__link" href="{{ post.bibtexurl }}" target="_blank" rel="noopener"><i class="fas fa-file-code" aria-hidden="true"></i>BibTeX</a>
     {% endif %}
@@ -60,6 +70,9 @@
       <a class="research-card__link" href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fas fa-quote-right" aria-hidden="true"></i>Cite</a>
     {% else %}
       <a class="research-card__link" href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fas fa-circle-info" aria-hidden="true"></i>Details</a>
+    {% endif %}
+    {% if related_item %}
+      <a class="research-card__link research-card__link--related" href="#{{ related_item.permalink | slugify }}"><i class="fas fa-link" aria-hidden="true"></i>Related {{ related_kind }}</a>
     {% endif %}
   </div>
 </article>

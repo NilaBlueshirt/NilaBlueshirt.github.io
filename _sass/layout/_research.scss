@@ -2,31 +2,15 @@
    RESEARCH — minimalist card grid for publications & talks
    ========================================================================== */
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 .research-intro {
   margin-bottom: 2em;
   font-size: $type-size-6;
-  color: var(--global-fig-caption-color);
-}
-
-.research-section {
-  margin-bottom: 3em;
-}
-
-.research-section__title {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5em;
-  margin-bottom: 1em;
-  padding-bottom: 0.4em;
-  border-bottom: 1px solid var(--global-border-color);
-  font-size: $type-size-4;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.research-section__count {
-  font-size: $type-size-6;
-  font-weight: 400;
   color: var(--global-fig-caption-color);
 }
 
@@ -43,6 +27,7 @@
   border: 1px solid var(--global-border-color);
   border-radius: 12px;
   background-color: var(--global-bg-color);
+  scroll-margin-top: 6em;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 
   &:hover {
@@ -51,28 +36,58 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
-  .research-card__meta {
+  /* highlight when jumped to via a "Related …" cross-link */
+  &:target {
+    border-color: var(--global-link-color);
+    box-shadow: 0 0 0 2px var(--global-link-color);
+  }
+
+  .research-card__eyebrow {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 0.4em;
-    margin: 0 0 0.75em;
+    justify-content: space-between;
+    gap: 0.75em;
+    margin: 0 0 0.8em;
     font-size: $type-size-7;
-    letter-spacing: 0.02em;
     color: var(--global-fig-caption-color);
   }
 
-  .research-card__badge {
-    margin-left: auto;
-    padding: 0.15em 0.75em;
-    border: 1px solid var(--global-border-color);
-    border-radius: 999px;
+  .research-card__tag {
+    display: inline-flex;
+    align-items: center;
     font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 0.55em;
+      height: 0.55em;
+      margin-right: 0.55em;
+      border-radius: 50%;
+      background-color: var(--global-fig-caption-color);
+    }
+  }
+
+  .research-card__tag--manuscripts::before {
+    background-color: var(--global-link-color);
+  }
+
+  .research-card__tag--conferences::before {
+    background-color: #a78bfa;
+  }
+
+  .research-card__tag--talks::before {
+    background-color: #f59e0b;
+  }
+
+  .research-card__year {
     white-space: nowrap;
   }
 
   .research-card__title {
-    margin: 0 0 0.6em;
+    margin: 0 0 0.45em;
     font-size: 1.05em;
     font-weight: 600;
     line-height: 1.45;
@@ -91,6 +106,13 @@
     }
   }
 
+  .research-card__venue {
+    margin: 0 0 0.8em;
+    font-size: 0.8em;
+    line-height: 1.5;
+    color: var(--global-fig-caption-color);
+  }
+
   .research-card__excerpt {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -101,47 +123,6 @@
     line-height: 1.6;
     color: var(--global-text-color);
     opacity: 0.8;
-  }
-
-  .research-card__related {
-    margin: 0 0 1.4em;
-    padding: 0.2em 0 0.2em 0.9em;
-    border-left: 2px solid var(--global-link-color);
-    font-size: 0.8em;
-    line-height: 1.55;
-  }
-
-  .research-card__related-label {
-    display: block;
-    margin-bottom: 0.2em;
-    font-size: 0.85em;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--global-fig-caption-color);
-
-    .fas {
-      margin-right: 0.25em;
-    }
-  }
-
-  a.research-card__related-title,
-  a.research-card__related-title:visited {
-    display: block;
-    font-weight: 600;
-    color: var(--global-text-color);
-    text-decoration: none;
-  }
-
-  a.research-card__related-title:hover,
-  a.research-card__related-title:focus-visible {
-    color: var(--global-link-color);
-    text-decoration: none;
-  }
-
-  .research-card__related-meta {
-    display: block;
-    color: var(--global-fig-caption-color);
   }
 
   .research-card__links {
@@ -171,6 +152,10 @@
     border-color: var(--global-link-color);
     color: var(--global-link-color);
     text-decoration: none;
+  }
+
+  a.research-card__link--related {
+    border-style: dashed;
   }
 
   .research-card__link .fas {
