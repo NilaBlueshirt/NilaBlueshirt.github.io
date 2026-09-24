@@ -50,11 +50,12 @@
     <time class="research-card__year" itemprop="datePublished" datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%Y" }}</time>
   </p>
 
+  {% assign title_url = post.paperurl | default: post.link | default: post.slidesurl %}
   <h3 class="research-card__title" itemprop="headline">
-    {% if post.paperurl %}
-      <a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ r_title }}<i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (opens the paper in a new tab)</span></a>
+    {% if title_url %}
+      <a href="{{ title_url }}" target="_blank" rel="noopener">{{ r_title }}<span class="sr-only"> (opens in a new tab)</span></a>
     {% else %}
-      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ r_title }}</a>
+      <span class="research-card__title-text">{{ r_title }}</span>
     {% endif %}
   </h3>
 
@@ -81,6 +82,8 @@
           data-year="{{ post.date | default: '1900-01-01' | date: '%Y' }}"
           data-entrytype="{% if post.category == 'manuscripts' %}article{% elsif post.category == 'conferences' %}inproceedings{% else %}misc{% endif %}"
           data-key="{{ post.permalink | slugify | remove_first: 'publication-' }}"
+          {% if post.authors %}data-authors="{{ post.authors | join: '|' | escape }}"{% endif %}
+          {% if post.doi %}data-doi="{{ post.doi }}"{% endif %}
           {% if post.paperurl %}data-url="{{ post.paperurl }}"{% endif %}><i class="fas fa-quote-right" aria-hidden="true"></i>Cite</button>
       {% endif %}
       {% if related_item %}

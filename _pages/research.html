@@ -3,16 +3,13 @@ layout: archive
 title: "Research"
 permalink: /research/
 author_profile: true
+hide_title: true
 redirect_from:
   - /publications/
   - /talks/
 ---
 
 {% include base_path %}
-
-{% if site.author.googlescholar %}
-  <p class="research-intro">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
-{% endif %}
 
 {% assign entries = site.publications | concat: site.talks | sort: "date" | reverse %}
 <div class="research-grid">

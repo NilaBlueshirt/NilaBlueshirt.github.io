@@ -7,21 +7,93 @@
   }
   var list = document.getElementById("cite-dialog-styles");
 
+  function parseName(name) {
+    var parts = name.trim().split(/\s+/);
+    var family = parts.length > 1 ? parts[parts.length - 1] : parts[0];
+    var given = parts.slice(0, parts.length > 1 ? parts.length - 1 : 0).join(" ");
+    return { family: family, given: given };
+  }
+
+  function initials(given) {
+    if (!given) {
+      return "";
+    }
+    return given.split(/\s+/).map(function (token) {
+      return token.split("-").map(function (part) {
+        return part.charAt(0).toUpperCase() + ".";
+      }).join("-");
+    }).join(" ");
+  }
+
+  function apaAuthors(names) {
+    var formatted = names.map(function (n) {
+      var p = parseName(n);
+      var init = initials(p.given);
+      return init ? p.family + ", " + init : p.family;
+    });
+    if (formatted.length === 1) {
+      return formatted[0];
+    }
+    return formatted.slice(0, -1).join(", ") + ", & " + formatted[formatted.length - 1];
+  }
+
+  function mlaAuthors(names) {
+    var first = parseName(names[0]);
+    var lead = first.given ? first.family + ", " + first.given : first.family;
+    if (names.length === 1) {
+      return lead;
+    }
+    if (names.length === 2) {
+      return lead + ", and " + names[1].trim();
+    }
+    return lead + ", et al";
+  }
+
   function buildStyles(d) {
     var title = d.title || "";
     var venue = d.venue || "";
     var year = d.year || "";
-    var apa = title + ". (" + year + "). " + venue + ".";
-    var mla = "“" + title + ".” " + venue + ", " + year + ".";
+    var doi = d.doi || "";
+    var names = d.authors ? d.authors.split("|").filter(function (n) {
+      return n.trim().length > 0;
+    }) : [];
+
+    var apa = "";
+    if (names.length > 0) {
+      apa += apaAuthors(names) + " (" + year + "). " + title + ". " + venue + ".";
+    } else {
+      apa += title + ". (" + year + "). " + venue + ".";
+    }
+    if (doi) {
+      apa += " https://doi.org/" + doi;
+    }
+
+    var mla = "";
+    if (names.length > 0) {
+      mla += mlaAuthors(names) + ". ";
+    }
+    mla += "“" + title + ".” " + venue + ", " + year + ".";
+    if (doi) {
+      mla += " doi:" + doi + ".";
+    }
+
     var field = d.entrytype === "article" ? "journal" : "booktitle";
     var bib = "@" + (d.entrytype || "misc") + "{" + (d.key || "citation") + ",\n";
+    if (names.length > 0) {
+      bib += "  author = {" + names.map(function (n) {
+        return n.trim();
+      }).join(" and ") + "},\n";
+    }
     bib += "  title = {" + title + "},\n";
     bib += "  " + field + " = {" + venue + "},\n";
     bib += "  year = {" + year + "}";
-    if (d.url) {
+    if (doi) {
+      bib += ",\n  doi = {" + doi + "}";
+    } else if (d.url) {
       bib += ",\n  url = {" + d.url + "}";
     }
     bib += "\n}";
+
     return [["APA", apa], ["MLA", mla], ["BibTeX", bib]];
   }
 

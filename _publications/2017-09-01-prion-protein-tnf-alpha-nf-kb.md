@@ -8,4 +8,12 @@ date: 2017-09-01
 venue: 'Journal of Biological Chemistry'
 citation: 'Prion protein is required for tumor necrosis factor alpha (TNFα)-triggered nuclear factor kappa B (NF-κB) signaling and cytokine production. <i>Journal of Biological Chemistry</i> (Sep 2017). JBC Recommended Reads, Oct 2017.'
 paperurl: https://www.jbc.org/article/S0021-9258(20)32923-9/fulltext
+doi: 10.1074/jbc.M117.787283
+authors:
+  - 'Gui-Ru Wu'
+  - 'Tian-Chen Mu'
+  - 'Zhen-Xing Gao'
+  - 'Jun Wang'
+  - 'Man-Sun Sy'
+  - 'Chao-Yang Li'
 ---
