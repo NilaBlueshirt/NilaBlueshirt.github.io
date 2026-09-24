@@ -1,0 +1,62 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+author_profile: true
+redirect_from:
+  - /publications/
+  - /talks/
+---
+
+{% include base_path %}
+
+{% if site.author.googlescholar %}
+  <p class="research-intro">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>
+{% endif %}
+
+{% comment %} Publications, grouped by category. A publication paired with a
+    talk (via related_talk / related_pub) renders as one merged card here. {% endcomment %}
+{% if site.publication_category %}
+  {% for category in site.publication_category %}
+    {% assign entries = site.publications | where: "category", category[0] | sort: "date" | reverse %}
+    {% if entries.size > 0 %}
+      <section class="research-section">
+        <h2 class="research-section__title">{{ category[1].title }}<span class="research-section__count">{{ entries.size }}</span></h2>
+        <div class="research-grid">
+          {% for post in entries %}
+            {% include research-card.html %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% assign entries = site.publications | sort: "date" | reverse %}
+  <div class="research-grid">
+    {% for post in entries %}
+      {% include research-card.html %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% comment %} Standalone talks: skip any talk already folded into a publication card. {% endcomment %}
+{% assign talks_sorted = site.talks | sort: "date" | reverse %}
+{% assign standalone_talk_count = 0 %}
+{% for talk in talks_sorted %}
+  {% assign claiming_pub = site.publications | where: "related_talk", talk.permalink | first %}
+  {% if talk.related_pub or claiming_pub %}{% continue %}{% endif %}
+  {% assign standalone_talk_count = standalone_talk_count | plus: 1 %}
+{% endfor %}
+
+{% if standalone_talk_count > 0 %}
+  <section class="research-section">
+    <h2 class="research-section__title">Talks &amp; Posters<span class="research-section__count">{{ standalone_talk_count }}</span></h2>
+    <div class="research-grid">
+      {% for post in talks_sorted %}
+        {% assign claiming_pub = site.publications | where: "related_talk", post.permalink | first %}
+        {% if post.related_pub or claiming_pub %}{% continue %}{% endif %}
+        {% include research-card.html %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

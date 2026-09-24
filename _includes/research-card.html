@@ -1,0 +1,65 @@
+{% include base_path %}
+
+{% if post.id %}
+  {% assign r_title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign r_title = post.title %}
+{% endif %}
+
+{% comment %} A publication and a talk can be paired from either side:
+    - publication frontmatter: related_talk: /talks/<permalink>
+    - talk frontmatter:        related_pub: /publication/<permalink>
+    Paired talks are folded into the publication's card. {% endcomment %}
+{% assign paired_talk = nil %}
+{% if post.collection == "publications" %}
+  {% if post.related_talk %}
+    {% assign paired_talk = site.talks | where: "permalink", post.related_talk | first %}
+  {% endif %}
+  {% unless paired_talk %}
+    {% assign paired_talk = site.talks | where: "related_pub", post.permalink | first %}
+  {% endunless %}
+{% endif %}
+
+<article class="research-card" itemscope itemtype="http://schema.org/CreativeWork">
+  <p class="research-card__meta">
+    <time itemprop="datePublished" datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%Y" }}</time>
+    {% if post.venue %}<span aria-hidden="true">&middot;</span> <span class="research-card__venue">{{ post.venue }}</span>{% endif %}
+    {% if post.collection == "talks" and post.type %}<span class="research-card__badge">{{ post.type | escape }}</span>{% endif %}
+  </p>
+
+  <h3 class="research-card__title" itemprop="headline">
+    <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ r_title }}</a>
+  </h3>
+
+  {% if post.excerpt %}
+    <p class="research-card__excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html }}</p>
+  {% endif %}
+
+  {% if paired_talk %}
+    <div class="research-card__related">
+      <span class="research-card__related-label"><i class="fas fa-person-chalkboard" aria-hidden="true"></i> Related talk</span>
+      <a class="research-card__related-title" href="{{ base_path }}{{ paired_talk.url }}">{{ paired_talk.title }}</a>
+      <span class="research-card__related-meta">{% if paired_talk.type %}{{ paired_talk.type | escape }} &middot; {% endif %}{{ paired_talk.venue }} &middot; {{ paired_talk.date | date: "%Y" }}</span>
+    </div>
+  {% endif %}
+
+  <div class="research-card__links">
+    {% if post.paperurl %}
+      <a class="research-card__link" href="{{ post.paperurl }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i>Paper</a>
+    {% endif %}
+    {% if post.slidesurl %}
+      <a class="research-card__link" href="{{ post.slidesurl }}" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i>Slides</a>
+    {% endif %}
+    {% if paired_talk.slidesurl %}
+      <a class="research-card__link" href="{{ paired_talk.slidesurl }}" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i>Talk Slides</a>
+    {% endif %}
+    {% if post.bibtexurl %}
+      <a class="research-card__link" href="{{ post.bibtexurl }}" target="_blank" rel="noopener"><i class="fas fa-file-code" aria-hidden="true"></i>BibTeX</a>
+    {% endif %}
+    {% if post.collection == "publications" %}
+      <a class="research-card__link" href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fas fa-quote-right" aria-hidden="true"></i>Cite</a>
+    {% else %}
+      <a class="research-card__link" href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fas fa-circle-info" aria-hidden="true"></i>Details</a>
+    {% endif %}
+  </div>
+</article>
