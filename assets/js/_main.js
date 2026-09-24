@@ -12,11 +12,11 @@ const MERMAID_URL = "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.mi
 // Detect OS/browser preference
 const browserPref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-// Determine the computed theme, which can be "dark" or "light".
+// Determine the computed theme, which can be "dark", "light", or "lcars".
 function determineComputedTheme() {
-  // Determine the expected state of the theme toggle, which can be "dark", "light", or default "system"
+  // Determine the expected state of the theme toggle: "dark", "light", "lcars", or default "system"
   let themeSetting = localStorage.getItem("theme");
-  themeSetting = (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") ? "system" : themeSetting;
+  themeSetting = (themeSetting != "dark" && themeSetting != "light" && themeSetting != "lcars" && themeSetting != "system") ? "system" : themeSetting;
 
   // Return the setting if set, or use the browser preference
   if (themeSetting != "system") {
@@ -35,16 +35,18 @@ function setTheme(theme) {
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
     $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+  } else if (use_theme === "lcars") {
+    $("html").attr("data-theme", "lcars");
   } else if (use_theme === "light") {
     $("html").removeAttr("data-theme");
     $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
   }
 }
 
-// Toggle the theme manually
+// Toggle the theme manually: light -> dark -> lcars -> light
 function toggleTheme() {
   const current_theme = $("html").attr("data-theme");
-  const new_theme = current_theme === "dark" ? "light" : "dark";
+  const new_theme = current_theme === "dark" ? "lcars" : (current_theme === "lcars" ? "light" : "dark");
   localStorage.setItem("theme", new_theme);
   setTheme(new_theme);
   redrawPlotly();
@@ -100,7 +102,7 @@ if (plotlyElements.length > 0) {
         elem.parentElement.after(chartElement);
 
         // Set the theme for the plot and render it
-        const theme = (determineComputedTheme() === "dark") ? plotlyDarkLayout : plotlyLightLayout;
+        const theme = (determineComputedTheme() === "light") ? plotlyLightLayout : plotlyDarkLayout;
         if (jsonData.layout) {
           jsonData.layout.template = (jsonData.layout.template) ? { ...theme, ...jsonData.layout.template } : theme;
         } else {
@@ -124,7 +126,7 @@ function redrawPlotly() {
     let chartElement = $(elem).parent().next().get(0);
 
     // Set the theme for the plot and render it
-    const theme = (determineComputedTheme() === "dark") ? plotlyDarkLayout : plotlyLightLayout;
+    const theme = (determineComputedTheme() === "light") ? plotlyLightLayout : plotlyDarkLayout;
     if (jsonData.layout) {
       jsonData.layout.template = (jsonData.layout.template) ? { ...theme, ...jsonData.layout.template } : theme;
     } else {

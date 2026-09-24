@@ -1,0 +1,242 @@
+/* ==========================================================================
+   LCARS — retro-futuristic starship-console skin, active only while the
+   theme toggle is in its third position (html[data-theme="lcars"]).
+   Colors come from theme/_lcars_mode.scss; this file adds the shapes:
+   condensed uppercase type, pill controls, panel cards with end-caps.
+   ========================================================================== */
+
+$lcars-font: "Antonio", "Arial Narrow", "Helvetica Neue Condensed", sans-serif;
+
+html[data-theme="lcars"] {
+
+  body {
+    background-color: #000;
+    background-image: none !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .author__name,
+  .masthead__menu-item a,
+  .research-card__title,
+  .research-card__tag,
+  .research-card__year,
+  .cite-dialog__title,
+  .cite-style__name {
+    font-family: $lcars-font;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .page__title {
+    color: var(--global-link-color);
+  }
+
+  /* masthead: top console bar with pill navigation */
+  .masthead {
+    background-color: #000;
+    border-bottom: 0.45em solid var(--global-link-color);
+
+    .site-title,
+    .masthead__title {
+      font-family: $lcars-font;
+      text-transform: uppercase;
+      color: var(--global-link-color);
+    }
+  }
+
+  .masthead__menu-item a {
+    margin: 0 0.3em;
+    padding: 0.15em 1em !important;
+    border-radius: 999px;
+    background-color: var(--global-link-color);
+    color: #000 !important;
+    font-weight: 700;
+
+    &:hover {
+      background-color: var(--global-link-color-hover);
+      color: #000 !important;
+    }
+  }
+
+  .masthead__menu-item.selected a {
+    background-color: var(--global-text-color);
+    border-bottom: 0;
+    color: #000 !important;
+  }
+
+  /* the toggle shows the Vulcan salute in this mode */
+  #theme-toggle a {
+    background: transparent;
+    color: var(--global-link-color) !important;
+
+    &:hover {
+      background: transparent;
+      color: var(--global-link-color-hover) !important;
+    }
+  }
+
+  #theme-icon {
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 1.15em;
+    line-height: 1;
+    vertical-align: -0.1em;
+
+    &::before {
+      content: "🖖";
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    }
+  }
+
+  /* cards: LCARS panels with a thick rounded end-cap keyed to the tag */
+  .research-card {
+    border: 1px solid var(--global-border-color);
+    border-left: 1em solid var(--global-link-color);
+    border-radius: 1.6em 0.6em 0.6em 1.6em;
+    background-color: #000;
+
+    &:hover,
+    &:focus-within {
+      border-color: var(--global-dark-border-color);
+      border-left-color: var(--global-link-color-hover);
+      box-shadow: 0 0 18px rgba(255, 156, 0, 0.25);
+    }
+
+    &:has(.research-card__tag--manuscripts) { border-left-color: #99ccff; }
+    &:has(.research-card__tag--conferences) { border-left-color: #cc99cc; }
+    &:has(.research-card__tag--talks) { border-left-color: #ff9c00; }
+    &:has(.research-card__tag--teaching) { border-left-color: #ffcc66; }
+
+    .research-card__tag--manuscripts::before { background-color: #99ccff; }
+    .research-card__tag--conferences::before { background-color: #cc99cc; }
+    .research-card__tag--talks::before { background-color: #ff9c00; }
+    .research-card__tag--teaching::before { background-color: #ffcc66; }
+
+    .research-card__title a,
+    .research-card__title a:visited,
+    .research-card__title .research-card__title-text {
+      color: var(--global-text-color);
+    }
+
+    .research-card__title a:hover,
+    .research-card__title a:focus-visible {
+      color: var(--global-link-color-hover);
+    }
+
+    a.research-card__link,
+    a.research-card__link:visited,
+    button.research-card__link {
+      border: 0;
+      background-color: var(--global-link-color);
+      color: #000;
+      font-family: $lcars-font;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    a.research-card__link:hover,
+    a.research-card__link:focus-visible,
+    button.research-card__link:hover,
+    button.research-card__link:focus-visible {
+      background-color: var(--global-link-color-hover);
+      color: #000;
+    }
+
+    a.research-card__link--related {
+      background-color: var(--global-fig-caption-color);
+    }
+
+    .research-card__excerpt {
+      border-radius: 0 0 0.6em 1.6em;
+      border-color: var(--global-dark-border-color);
+      background-color: #000;
+    }
+  }
+
+  /* standalone pill (CV download) */
+  .archive a.pill-button,
+  .archive a.pill-button:visited,
+  .page a.pill-button,
+  .page a.pill-button:visited {
+    border: 0;
+    background-color: var(--global-link-color);
+    color: #000;
+    font-family: $lcars-font;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .archive a.pill-button:hover,
+  .archive a.pill-button:focus-visible,
+  .page a.pill-button:hover,
+  .page a.pill-button:focus-visible {
+    background-color: var(--global-link-color-hover);
+    color: #000;
+  }
+
+  /* cite dialog: console readout */
+  .cite-dialog {
+    border: 1px solid var(--global-border-color);
+    border-left: 1em solid var(--global-link-color);
+    border-radius: 1.6em 0.6em 0.6em 1.6em;
+    background-color: #000;
+
+    &::backdrop {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .cite-style__copy {
+    border: 0;
+    background-color: var(--global-link-color);
+    color: #000;
+    font-family: $lcars-font;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--global-link-color-hover);
+      color: #000;
+    }
+  }
+
+  .cite-style__text {
+    background-color: var(--global-code-background-color);
+  }
+
+  /* sidebar & footer */
+  .author__name {
+    color: var(--global-link-color);
+  }
+
+  .author__avatar img {
+    border: 3px solid var(--global-link-color);
+  }
+
+  .page__footer {
+    background-color: #000;
+    border-top: 0.45em solid var(--global-link-color);
+
+    .page__footer-copyright {
+      font-family: $lcars-font;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--global-fig-caption-color);
+    }
+  }
+
+  /* buns gallery photos get console frames too */
+  .buns-item {
+    border-color: var(--global-border-color);
+
+    &:hover {
+      box-shadow: 0 0 18px rgba(255, 156, 0, 0.25);
+    }
+  }
+}

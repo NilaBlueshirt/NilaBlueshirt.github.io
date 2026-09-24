@@ -1,0 +1,31 @@
+/* ==========================================================================
+    LCARS MODE — third theme state (html[data-theme="lcars"])
+    Retro-futuristic starship console: black background, orange/peach accents.
+    Variables only; the structural skin lives in layout/_lcars.scss.
+    ========================================================================== */
+$lcarsm-black               : #000000;
+$lcarsm-orange              : #ff9c00;
+$lcarsm-peach               : #ffcc99;
+$lcarsm-butterscotch        : #ffcc66;
+$lcarsm-lilac               : #cc99cc;
+$lcarsm-periwinkle          : #9999cc;
+$lcarsm-space               : #1a1105;
+
+html[data-theme="lcars"] {
+    --global-base-color                 : #{$lcarsm-orange};
+    --global-bg-color                   : #{$lcarsm-black};
+    --global-footer-bg-color            : #{$lcarsm-black};
+    --global-border-color               : #59431a;
+    --global-dark-border-color          : #{$lcarsm-orange};
+    --global-code-background-color      : #{$lcarsm-space};
+    --global-code-text-color            : #{$lcarsm-peach};
+    --global-fig-caption-color          : #{$lcarsm-periwinkle};
+    --global-link-color                 : #{$lcarsm-orange};
+    --global-link-color-hover           : #{$lcarsm-butterscotch};
+    --global-link-color-visited         : #{$lcarsm-lilac};
+    --global-masthead-link-color        : #{$lcarsm-peach};
+    --global-masthead-link-color-hover  : #{$lcarsm-orange};
+    --global-text-color                 : #{$lcarsm-peach};
+    --global-text-color-light           : #{$lcarsm-periwinkle};
+    --global-thead-color                : #{$lcarsm-space};
+}

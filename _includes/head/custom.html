@@ -8,17 +8,22 @@
   (function () {
     var t = null;
     try { t = localStorage.getItem("theme"); } catch (e) { t = null; }
-    if (t !== "dark" && t !== "light") {
+    if (t !== "dark" && t !== "light" && t !== "lcars") {
       t = document.documentElement.getAttribute("data-theme") ||
         (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     }
-    if (t === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
+    if (t === "dark" || t === "lcars") {
+      document.documentElement.setAttribute("data-theme", t);
     } else {
       document.documentElement.removeAttribute("data-theme");
     }
   }());
 </script>
+
+<!-- LCARS display font (used by the lcars theme mode) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&display=swap" rel="stylesheet">
 
 <!-- Support for Academicons -->
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
