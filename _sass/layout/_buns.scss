@@ -42,6 +42,65 @@
   }
 }
 
+.buns-item__media {
+  position: relative;
+}
+
+.buns-like {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  position: absolute;
+  right: 0.6em;
+  bottom: 0.6em;
+  margin: 0;
+  padding: 0.35em 0.7em;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.8em;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: background 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .fas {
+    opacity: 0.85;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+}
+
+.buns-like--liked .fas {
+  color: #ff5d73;
+  opacity: 1;
+}
+
+.buns-like--pop .fas {
+  animation: buns-heart-pop 0.35s ease;
+}
+
+@keyframes buns-heart-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.45); }
+  100% { transform: scale(1); }
+}
+
+.buns-like__count {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+
+  &:empty {
+    display: none;
+  }
+}
+
 .buns-item__caption {
   padding: 0.5em 0.9em 0.7em;
   font-size: 0.75em;
@@ -54,6 +113,10 @@
   .buns-item:hover {
     transform: none;
     transition: none;
+  }
+
+  .buns-like--pop .fas {
+    animation: none;
   }
 }
 

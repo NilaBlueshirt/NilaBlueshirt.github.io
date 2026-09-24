@@ -18,7 +18,9 @@ permalink: /buns/
         {% assign bun_src = "https://lh3.googleusercontent.com/d/" | append: bun_id | append: "=w1200" %}
       {% endif %}
       <figure class="buns-item">
-        <img src="{{ bun_src }}" alt="{{ bun.alt | default: 'Photo' | escape }}" loading="lazy">
+        <div class="buns-item__media">
+          <img src="{{ bun_src }}" alt="{{ bun.alt | default: 'Photo' | escape }}" loading="lazy">
+        </div>
         {% if bun.caption %}
           <figcaption class="buns-item__caption">{{ bun.caption }}</figcaption>
         {% endif %}
@@ -28,3 +30,4 @@ permalink: /buns/
 </div>
 
 <script src="{{ base_path }}/assets/js/masonry.js" defer></script>
+<script src="{{ base_path }}/assets/js/buns-likes.js" defer></script>
