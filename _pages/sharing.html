@@ -1,0 +1,17 @@
+---
+layout: archive
+title: "Sharing"
+permalink: /sharing/
+author_profile: true
+redirect_from:
+  - /teaching/
+---
+
+{% include base_path %}
+
+{% assign entries = site.teaching | sort: "date" | reverse %}
+<div class="research-grid">
+  {% for post in entries %}
+    {% include research-card.html %}
+  {% endfor %}
+</div>

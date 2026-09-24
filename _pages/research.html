@@ -20,3 +20,14 @@ redirect_from:
     {% include research-card.html %}
   {% endfor %}
 </div>
+
+<dialog id="cite-dialog" class="cite-dialog" aria-labelledby="cite-dialog-title">
+  <div class="cite-dialog__panel">
+    <div class="cite-dialog__head">
+      <h2 id="cite-dialog-title" class="cite-dialog__title">Cite this work</h2>
+      <button type="button" class="cite-dialog__close" data-cite-close aria-label="Close">&times;</button>
+    </div>
+    <div id="cite-dialog-styles"></div>
+  </div>
+</dialog>
+<script src="{{ base_path }}/assets/js/cite.js" defer></script>

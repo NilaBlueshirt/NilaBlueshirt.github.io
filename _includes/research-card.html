@@ -34,8 +34,14 @@
   {% assign tag_label = cat_info.tag | default: cat_info.title | default: "Publication" %}
   {% assign tag_mod = post.category | default: "publication" %}
 {% else %}
-  {% assign tag_label = post.type | default: "Talk" %}
-  {% assign tag_mod = "talks" %}
+  {% assign tag_label = post.type %}
+  {% unless tag_label %}{% assign tag_label = post.collection | capitalize %}{% endunless %}
+  {% assign tag_mod = post.collection %}
+{% endif %}
+
+{% assign has_links = false %}
+{% if post.collection == "publications" or post.slidesurl or post.bibtexurl or related_item %}
+  {% assign has_links = true %}
 {% endif %}
 
 <article id="{{ post.permalink | slugify }}" class="research-card" itemscope itemtype="http://schema.org/CreativeWork">
@@ -45,7 +51,11 @@
   </p>
 
   <h3 class="research-card__title" itemprop="headline">
-    <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ r_title }}</a>
+    {% if post.paperurl %}
+      <a href="{{ post.paperurl }}" target="_blank" rel="noopener">{{ r_title }}<i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (opens the paper in a new tab)</span></a>
+    {% else %}
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ r_title }}</a>
+    {% endif %}
   </h3>
 
   {% if post.venue %}
@@ -56,23 +66,26 @@
     <p class="research-card__excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html }}</p>
   {% endif %}
 
-  <div class="research-card__links">
-    {% if post.paperurl %}
-      <a class="research-card__link" href="{{ post.paperurl }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i>Paper</a>
-    {% endif %}
-    {% if post.slidesurl %}
-      <a class="research-card__link" href="{{ post.slidesurl }}" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i>Slides</a>
-    {% endif %}
-    {% if post.bibtexurl %}
-      <a class="research-card__link" href="{{ post.bibtexurl }}" target="_blank" rel="noopener"><i class="fas fa-file-code" aria-hidden="true"></i>BibTeX</a>
-    {% endif %}
-    {% if post.collection == "publications" %}
-      <a class="research-card__link" href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fas fa-quote-right" aria-hidden="true"></i>Cite</a>
-    {% else %}
-      <a class="research-card__link" href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fas fa-circle-info" aria-hidden="true"></i>Details</a>
-    {% endif %}
-    {% if related_item %}
-      <a class="research-card__link research-card__link--related" href="#{{ related_item.permalink | slugify }}"><i class="fas fa-link" aria-hidden="true"></i>Related {{ related_kind }}</a>
-    {% endif %}
-  </div>
+  {% if has_links %}
+    <div class="research-card__links">
+      {% if post.slidesurl %}
+        <a class="research-card__link" href="{{ post.slidesurl }}" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i>Slides</a>
+      {% endif %}
+      {% if post.bibtexurl %}
+        <a class="research-card__link" href="{{ post.bibtexurl }}" target="_blank" rel="noopener"><i class="fas fa-file-code" aria-hidden="true"></i>BibTeX</a>
+      {% endif %}
+      {% if post.collection == "publications" %}
+        <button type="button" class="research-card__link research-card__link--cite" data-cite
+          data-title="{{ post.title | escape }}"
+          data-venue="{{ post.venue | escape }}"
+          data-year="{{ post.date | default: '1900-01-01' | date: '%Y' }}"
+          data-entrytype="{% if post.category == 'manuscripts' %}article{% elsif post.category == 'conferences' %}inproceedings{% else %}misc{% endif %}"
+          data-key="{{ post.permalink | slugify | remove_first: 'publication-' }}"
+          {% if post.paperurl %}data-url="{{ post.paperurl }}"{% endif %}><i class="fas fa-quote-right" aria-hidden="true"></i>Cite</button>
+      {% endif %}
+      {% if related_item %}
+        <a class="research-card__link research-card__link--related" href="#{{ related_item.permalink | slugify }}"><i class="fas fa-link" aria-hidden="true"></i>Related {{ related_kind }}</a>
+      {% endif %}
+    </div>
+  {% endif %}
 </article>

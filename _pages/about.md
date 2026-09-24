@@ -23,4 +23,4 @@ Trained as a computational biologist, my earlier research applied explainable ma
 
 I hold an M.S. in Computer Science (Biomedical Informatics) and a B.S. in Computer Science from Arizona State University, and a B.S. in Biology from Wuhan University. My peer-reviewed research has appeared in *mSystems*, *mBio*, and the *Journal of Biological Chemistry*, with conference contributions to PEARC, US-RSE, and RMACC.
 
-You can browse my [research](/research/) and [teaching](/teaching/), or read my full [CV](/cv/). Feel free to reach out at [nil.mu@asu.edu](mailto:nil.mu@asu.edu).
+You can browse my [research](/research/) and [sharing](/sharing/), or read my full [CV](/cv/). Feel free to reach out at [nil.mu@asu.edu](mailto:nil.mu@asu.edu).
