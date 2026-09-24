@@ -1,0 +1,61 @@
+/* ==========================================================================
+    SOLARIZED THEME - LIGHT VERSION
+    (palette: https://ethanschoonover.com/solarized/)
+    ========================================================================== */
+/* Solarized palette */
+$sol-base3                  : #fdf6e3;
+$sol-base2                  : #eee8d5;
+$sol-base1                  : #93a1a1;
+$sol-base00                 : #657b83;
+$sol-base01                 : #586e75;
+$sol-base02                 : #073642;
+$sol-blue                   : #268bd2;
+$sol-cyan                   : #2aa198;
+$sol-red                    : #dc322f;
+$sol-green                  : #859900;
+$sol-yellow                 : #b58900;
+
+/* Color codes used for the theme */
+$primary-color              : $sol-blue;
+$gray                       : $sol-base00;
+$dark-gray                  : $sol-base01;
+$darker-gray                : $sol-base02;
+$light-gray                 : $sol-base1;
+$lighter-gray               : $sol-base2;
+
+/* Color codes used for the site */
+$danger-color               : $sol-red;
+$info-color                 : $sol-blue;
+$notice-color               : $sol-base00;
+$success-color              : $sol-green;
+$warning-color              : $sol-yellow;
+
+/* Other basic settings for the template */
+$border-radius              : 4px;
+$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Solarized light theme for the site */
+:root {
+    --global-base-color                 : #{$primary-color};
+    --global-bg-color                   : #{$sol-base3};
+    --global-footer-bg-color            : #{$sol-base2};
+    --global-border-color               : #{$sol-base2};
+    --global-dark-border-color          : #{mix(#000, $sol-base2, 15%)};
+    --global-code-background-color      : #{$sol-base2};
+    --global-code-text-color            : #{$sol-base01};
+    --global-fig-caption-color          : #{$sol-base1};
+    --global-link-color                 : #{$sol-blue};
+    --global-link-color-hover           : #{mix(#000, $sol-blue, 25%)};
+    --global-link-color-visited         : #{mix(#fff, $sol-blue, 25%)};
+    --global-masthead-link-color        : #{$sol-base01};
+    --global-masthead-link-color-hover  : #{$sol-base02};
+    --global-text-color                 : #{$sol-base01};
+    --global-text-color-light           : #{$sol-base1};
+    --global-thead-color                : #{$sol-base2};
+}

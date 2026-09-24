@@ -79,3 +79,25 @@
   border-bottom: 2px solid var(--global-text-color);
   /* No need to repeat pointer-events and cursor here */
 }
+
+/* Theme toggle: a simple circle — hollow in light mode, filled in dark mode */
+#theme-toggle a {
+  cursor: pointer;
+}
+
+#theme-icon {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  vertical-align: -0.075em;
+
+  &::before {
+    content: "";
+  }
+}
+
+html[data-theme="dark"] #theme-icon {
+  background-color: currentColor;
+}

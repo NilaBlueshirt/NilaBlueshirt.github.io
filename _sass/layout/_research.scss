@@ -94,16 +94,17 @@
     background-color: var(--global-link-color);
   }
 
+  /* Solarized accent colors */
   .research-card__tag--conferences::before {
-    background-color: #a78bfa;
+    background-color: #6c71c4;
   }
 
   .research-card__tag--talks::before {
-    background-color: #f59e0b;
+    background-color: #b58900;
   }
 
   .research-card__tag--teaching::before {
-    background-color: #10b981;
+    background-color: #859900;
   }
 
   .research-card__year {

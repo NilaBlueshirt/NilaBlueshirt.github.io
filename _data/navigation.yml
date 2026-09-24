@@ -11,10 +11,7 @@ main:
   - title: "Research"
     url: /research/
 
-  - title: "Sharing"
-    url: /sharing/
-
-  - title: "CV"
+  - title: "Curriculum Vitae"
     url: /cv/
 
   # - title: "CV"

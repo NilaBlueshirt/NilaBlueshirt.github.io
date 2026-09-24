@@ -1,0 +1,68 @@
+/* ==========================================================================
+    SOLARIZED THEME - DARK VERSION
+    (palette: https://ethanschoonover.com/solarized/)
+    ========================================================================== */
+/* Solarized palette */
+$sol-base03                 : #002b36;
+$sol-base02                 : #073642;
+$sol-base01                 : #586e75;
+$sol-base00                 : #657b83;
+$sol-base0                  : #839496;
+$sol-base1                  : #93a1a1;
+$sol-blue                   : #268bd2;
+$sol-cyan                   : #2aa198;
+$sol-red                    : #dc322f;
+$sol-green                  : #859900;
+$sol-yellow                 : #b58900;
+
+/* Color codes used for the theme */
+$primary-color              : $sol-blue;
+$gray                       : $sol-base00;
+$dark-gray                  : $sol-base01;
+$darker-gray                : $sol-base02;
+$light-gray                 : $sol-base1;
+
+$background                 : $sol-base03;
+$background-light           : $sol-base01;
+$background-lighter         : $sol-base02;
+$text                       : $sol-base1;
+$link                       : $sol-blue;
+$link-dark                  : mix(#000, $sol-blue, 25%);
+$link-light                 : mix(#fff, $sol-blue, 25%);
+
+/* Color codes used for the site */
+$danger-color               : $sol-red;
+$info-color                 : $sol-blue;
+$notice-color               : $sol-base00;
+$success-color              : $sol-green;
+$warning-color              : $sol-yellow;
+
+/* Other basic settings for the template */
+$border-radius              : 4px;
+$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Solarized dark theme for the site */
+html[data-theme="dark"] {
+    --global-base-color                 : #{$primary-color};
+    --global-bg-color                   : #{$sol-base03};
+    --global-footer-bg-color            : #{$sol-base02};
+    --global-border-color               : #{$sol-base02};
+    --global-dark-border-color          : #{$sol-base01};
+    --global-code-background-color      : #{$sol-base02};
+    --global-code-text-color            : #{$sol-base1};
+    --global-fig-caption-color          : #{$sol-base00};
+    --global-link-color                 : #{$link};
+    --global-link-color-hover           : #{$link-light};
+    --global-link-color-visited         : #{mix(#fff, $sol-blue, 40%)};
+    --global-masthead-link-color        : #{$sol-base1};
+    --global-masthead-link-color-hover  : #{$sol-blue};
+    --global-text-color                 : #{$sol-base1};
+    --global-text-color-light           : #{$sol-base0};
+    --global-thead-color                : #{$sol-base02};
+}
