@@ -9,19 +9,30 @@
 }
 
 .research-grid {
-  /* masonry-style tiling: cards keep their own height and pack tightly */
-  columns: 20em;
+  /* row-major masonry: newest cards fill the top across all columns.
+     Without JS this is a plain grid with uniform rows; masonry.js adds
+     the --masonry class and sets each card's row span. */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
   column-gap: 1.25em;
+  row-gap: 1.25em;
+}
+
+.research-grid--masonry {
+  grid-auto-rows: 2px;
+  row-gap: 0;
+  align-items: start;
+
+  .research-card {
+    margin-bottom: 1.25em;
+  }
 }
 
 .research-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  break-inside: avoid;
-  page-break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  margin: 0 0 1.25em;
+  margin: 0;
   padding: 1.4em 1.5em;
   border: 1px solid var(--global-border-color);
   border-radius: 12px;
@@ -356,10 +367,14 @@
 @include breakpoint(max-width $small) {
   .research-grid {
     column-gap: 1em;
+    row-gap: 1em;
+  }
+
+  .research-grid--masonry .research-card {
+    margin-bottom: 1em;
   }
 
   .research-card {
-    margin-bottom: 1em;
     padding: 1.2em 1.25em;
   }
 }

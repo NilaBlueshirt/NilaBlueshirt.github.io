@@ -11,8 +11,10 @@ redirect_from:
 {% include base_path %}
 
 {% assign entries = site.teaching | sort: "date" | reverse %}
-<div class="research-grid">
+<div class="research-grid" data-masonry>
   {% for post in entries %}
     {% include research-card.html %}
   {% endfor %}
 </div>
+
+<script src="{{ base_path }}/assets/js/masonry.js" defer></script>

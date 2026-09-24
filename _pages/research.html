@@ -12,7 +12,7 @@ redirect_from:
 {% include base_path %}
 
 {% assign entries = site.publications | concat: site.talks | sort: "date" | reverse %}
-<div class="research-grid">
+<div class="research-grid" data-masonry>
   {% for post in entries %}
     {% include research-card.html %}
   {% endfor %}
@@ -28,3 +28,4 @@ redirect_from:
   </div>
 </dialog>
 <script src="{{ base_path }}/assets/js/cite.js" defer></script>
+<script src="{{ base_path }}/assets/js/masonry.js" defer></script>
