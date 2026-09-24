@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<a href="{{ base_path }}/files/cv.pdf" class="btn btn--primary">Download Curriculum Vitæ (PDF)</a>
+<a href="{{ base_path }}/files/cv.pdf" class="pill-button" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i>Download PDF</a>
 
 Education
 ======
