@@ -1,0 +1,30 @@
+---
+layout: default
+title: "Buns"
+permalink: /buns/
+---
+
+{% include base_path %}
+
+<div id="main" role="main">
+  <h1 class="sr-only">Buns</h1>
+
+  <div class="buns-gallery" data-masonry>
+    {% for bun in site.data.buns %}
+      {% assign bun_src = bun.url %}
+      {% if bun_src contains "drive.google.com/file/d/" %}
+        {% assign bun_parts = bun_src | split: "/file/d/" %}
+        {% assign bun_id = bun_parts[1] | split: "/" | first %}
+        {% assign bun_src = "https://lh3.googleusercontent.com/d/" | append: bun_id | append: "=w1200" %}
+      {% endif %}
+      <figure class="buns-item">
+        <img src="{{ bun_src }}" alt="{{ bun.alt | default: 'Photo' | escape }}" loading="lazy">
+        {% if bun.caption %}
+          <figcaption class="buns-item__caption">{{ bun.caption }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endfor %}
+  </div>
+</div>
+
+<script src="{{ base_path }}/assets/js/masonry.js" defer></script>

@@ -41,8 +41,15 @@
   }
 
   var i;
+  var j;
+  var imgs;
   for (i = 0; i < grids.length; i += 1) {
     grids[i].classList.add("research-grid--masonry");
+    imgs = grids[i].querySelectorAll("img");
+    for (j = 0; j < imgs.length; j += 1) {
+      imgs[j].addEventListener("load", scheduleLayout);
+      imgs[j].addEventListener("error", scheduleLayout);
+    }
   }
   layoutAll();
 

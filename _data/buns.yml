@@ -1,0 +1,35 @@
+# Buns gallery — images live elsewhere; this file only stores links.
+#
+# Each entry:
+#   - url:     direct link to the image (required)
+#     alt:     short description for accessibility (recommended)
+#     caption: optional caption shown under the photo
+#
+# Supported URL sources:
+#   * Any direct image URL (ends in .jpg/.png/.webp etc.)
+#   * A public GitHub repo via jsDelivr CDN (recommended — free and reliable):
+#       https://cdn.jsdelivr.net/gh/USER/REPO@main/path/photo.jpg
+#   * Google Drive share links are converted automatically. Set the file to
+#     "Anyone with the link can view", then paste the normal share link:
+#       https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+#     Caveat: Drive is not a real image host — Google rate-limits and has
+#     broken this in the past. Fine for a handful of photos; use jsDelivr
+#     or Imgur direct links for anything you want to stay up long-term.
+#
+# The entries below are placeholders so the page renders — replace them
+# with your own photos.
+
+- url: https://picsum.photos/id/1074/900/600
+  alt: Placeholder photo (replace me)
+  caption: Placeholder — replace with a real bun
+- url: https://picsum.photos/id/1084/700/900
+  alt: Placeholder photo (replace me)
+- url: https://picsum.photos/id/219/800/500
+  alt: Placeholder photo (replace me)
+- url: https://picsum.photos/id/200/900/900
+  alt: Placeholder photo (replace me)
+- url: https://picsum.photos/id/237/600/800
+  alt: Placeholder photo (replace me)
+  caption: Also replace me
+- url: https://picsum.photos/id/1025/800/600
+  alt: Placeholder photo (replace me)
