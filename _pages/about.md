@@ -5,6 +5,8 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
+  - /sharing/
+  - /teaching/
 ---
 
 I am a **High-Performance Computing (HPC) Systems Administrator** in [Research Computing](https://cores.research.asu.edu/computing-and-data-services/research-computing/about/) at the [Research Technology Office](https://cores.research.asu.edu/), Arizona State University, where my work centers on high-performance computing for scientific discovery. Driven by a passion for science rooted in my bioinformatics background, I work to accelerate research through system optimization, research software engineering, user collaboration, and community education.
