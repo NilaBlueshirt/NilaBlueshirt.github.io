@@ -1,6 +1,7 @@
 /* ==========================================================================
-   LCARS — retro-futuristic starship-console skin, active only while the
-   theme toggle is in its third position (html[data-theme="lcars"]).
+   LCARS — retro-futuristic starship-console skin, active only in the hidden
+   third theme (html[data-theme="lcars"]), which the toggle lands on at
+   random once a viewer has clicked it more than three times.
    Colors come from theme/_lcars_mode.scss; this file adds the shapes:
    condensed uppercase type, pill controls, panel cards with end-caps.
    ========================================================================== */

@@ -43,10 +43,25 @@ function setTheme(theme) {
   }
 }
 
-// Toggle the theme manually: light -> dark -> lcars -> light
+// LCARS is a hidden third theme: after a viewer has clicked the toggle more than
+// LCARS_UNLOCK_CLICKS times on a page, each click has LCARS_CHANCE of landing on it
+const LCARS_UNLOCK_CLICKS = 3;
+const LCARS_CHANCE = 1 / 3;
+let themeToggleClicks = 0;
+let lcarsExitTheme = "light";
+
+// Toggle the theme manually: light <-> dark, with the occasional surprise LCARS
 function toggleTheme() {
   const current_theme = $("html").attr("data-theme");
-  const new_theme = current_theme === "dark" ? "lcars" : (current_theme === "lcars" ? "light" : "dark");
+  let new_theme = current_theme === "dark" ? "light" : "dark";
+  themeToggleClicks += 1;
+  if (current_theme === "lcars") {
+    new_theme = lcarsExitTheme;
+  } else if (themeToggleClicks > LCARS_UNLOCK_CLICKS && Math.random() < LCARS_CHANCE) {
+    // Leaving LCARS finishes the light/dark flip that the surprise replaced
+    lcarsExitTheme = new_theme;
+    new_theme = "lcars";
+  }
   localStorage.setItem("theme", new_theme);
   setTheme(new_theme);
   redrawPlotly();
