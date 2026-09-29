@@ -10,16 +10,20 @@ permalink: /buns/
   <h1 class="sr-only">Buns</h1>
 
   <div class="buns-gallery" data-masonry>
-    {% for bun in site.data.buns %}
+    {% comment %} Generated at build time by scripts/sync_buns_album.py {% endcomment %}
+    {% for bun in site.data.buns_gallery %}
       {% assign bun_src = bun.url %}
       {% if bun_src contains "drive.google.com/file/d/" %}
         {% assign bun_parts = bun_src | split: "/file/d/" %}
         {% assign bun_id = bun_parts[1] | split: "/" | first %}
         {% assign bun_src = "https://lh3.googleusercontent.com/d/" | append: bun_id | append: "=w1200" %}
       {% endif %}
+      {% unless bun_src contains "://" %}
+        {% assign bun_src = bun_src | relative_url %}
+      {% endunless %}
       <figure class="buns-item">
         <div class="buns-item__media">
-          <img src="{{ bun_src }}" alt="{{ bun.alt | default: 'Photo' | escape }}" loading="lazy">
+          <img src="{{ bun_src }}" alt="{{ bun.alt | default: 'Photo' | escape }}"{% if bun.width and bun.height %} width="{{ bun.width }}" height="{{ bun.height }}"{% endif %} loading="lazy">
         </div>
         {% if bun.caption %}
           <figcaption class="buns-item__caption">{{ bun.caption }}</figcaption>

@@ -21,3 +21,9 @@ package-lock.json
 
 # Ignore files created by MacOS
 .DS_Store
+
+# Buns photos are generated at build time by scripts/sync_buns_album.py and
+# must never be committed (see .github/workflows/pages.yml)
+images/buns/
+.buns-cache/
+_data/buns_gallery.yml
