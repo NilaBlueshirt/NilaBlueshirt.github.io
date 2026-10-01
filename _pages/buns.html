@@ -11,14 +11,6 @@ permalink: /buns/
 
   <p class="buns-intro">These are the bunny children my wife and I have rescued, fostered and raised with our local shelter, the Arizona Humane Society, since 2020.</p>
 
-  <aside class="buns-feature" aria-labelledby="buns-feature-title">
-    <div class="buns-feature__body">
-      <h2 id="buns-feature-title" class="buns-feature__title">Support the Arizona Humane Society</h2>
-      <p class="buns-feature__text">AHS rescues, treats and rehomes thousands of dogs, cats and critters across Maricopa County every year. It gets no funding from government agencies or other humane societies, so it depends on donations from the community.</p>
-    </div>
-    <a class="buns-feature__cta" href="https://www.azhumane.org/why-donate/" target="_blank" rel="noopener">Why donate <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-  </aside>
-
   <div class="buns-gallery" data-masonry>
     {% comment %} Generated at build time by scripts/sync_buns_album.py {% endcomment %}
     {% for bun in site.data.buns_gallery %}
@@ -38,6 +30,12 @@ permalink: /buns/
         {% endif %}
       </figure>
     {% endfor %}
+
+    <aside class="buns-item buns-donate" aria-labelledby="buns-donate-title">
+      <h2 id="buns-donate-title" class="buns-donate__title">Support the Arizona Humane Society</h2>
+      <p class="buns-donate__text">AHS rescues, treats and rehomes thousands of dogs, cats and critters across Maricopa County every year. It gets no funding from government agencies or other humane societies, so it depends on donations from the community.</p>
+      <a class="buns-donate__button" href="https://www.azhumane.org/why-donate/" target="_blank" rel="noopener">Donate</a>
+    </aside>
   </div>
 </div>
 

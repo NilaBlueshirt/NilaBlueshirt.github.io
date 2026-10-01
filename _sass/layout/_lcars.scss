@@ -24,8 +24,8 @@ html[data-theme="lcars"] {
   .research-card__title,
   .research-card__tag,
   .research-card__year,
-  .buns-feature__title,
-  .buns-feature__cta,
+  .buns-donate__title,
+  .buns-donate__button,
   .cite-dialog__title,
   .cite-style__name {
     font-family: $lcars-font;
@@ -234,28 +234,21 @@ html[data-theme="lcars"] {
     }
   }
 
-  /* buns highlight card: panel with an end-cap, pill call to action */
-  .buns-feature {
-    border-left: 1em solid var(--global-link-color);
-    border-radius: 1.6em 0.6em 0.6em 1.6em;
-    background-color: #000;
-  }
-
-  .buns-feature__title {
+  /* buns donate tile: orange title, pill button */
+  .buns-donate__title {
     color: var(--global-link-color);
   }
 
-  .buns-feature__cta,
-  .buns-feature__cta:visited {
-    border-color: var(--global-link-color);
+  .buns-donate__button,
+  .buns-donate__button:visited {
     background-color: var(--global-link-color);
     color: #000;
 
     &:hover,
     &:focus-visible {
-      border-color: var(--global-link-color-hover);
       background-color: var(--global-link-color-hover);
       color: #000;
+      filter: none;
     }
   }
 
