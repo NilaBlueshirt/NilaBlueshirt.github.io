@@ -24,6 +24,8 @@ html[data-theme="lcars"] {
   .research-card__title,
   .research-card__tag,
   .research-card__year,
+  .buns-feature__title,
+  .buns-feature__cta,
   .cite-dialog__title,
   .cite-style__name {
     font-family: $lcars-font;
@@ -229,6 +231,31 @@ html[data-theme="lcars"] {
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--global-fig-caption-color);
+    }
+  }
+
+  /* buns highlight card: panel with an end-cap, pill call to action */
+  .buns-feature {
+    border-left: 1em solid var(--global-link-color);
+    border-radius: 1.6em 0.6em 0.6em 1.6em;
+    background-color: #000;
+  }
+
+  .buns-feature__title {
+    color: var(--global-link-color);
+  }
+
+  .buns-feature__cta,
+  .buns-feature__cta:visited {
+    border-color: var(--global-link-color);
+    background-color: var(--global-link-color);
+    color: #000;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--global-link-color-hover);
+      background-color: var(--global-link-color-hover);
+      color: #000;
     }
   }
 
