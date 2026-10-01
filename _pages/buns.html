@@ -32,9 +32,7 @@ permalink: /buns/
         {% assign bun_src = bun_src | relative_url %}
       {% endunless %}
       <figure class="buns-item">
-        <div class="buns-item__media">
-          <img src="{{ bun_src }}" alt="{{ bun.alt | default: 'Photo' | escape }}"{% if bun.width and bun.height %} width="{{ bun.width }}" height="{{ bun.height }}"{% endif %} loading="lazy">
-        </div>
+        <img src="{{ bun_src }}" alt="{{ bun.alt | default: 'Photo' | escape }}"{% if bun.width and bun.height %} width="{{ bun.width }}" height="{{ bun.height }}"{% endif %} loading="lazy">
         {% if bun.caption %}
           <figcaption class="buns-item__caption">{{ bun.caption }}</figcaption>
         {% endif %}
@@ -44,4 +42,3 @@ permalink: /buns/
 </div>
 
 <script src="{{ base_path }}/assets/js/masonry.js" defer></script>
-<script src="{{ base_path }}/assets/js/buns-likes.js" defer></script>
