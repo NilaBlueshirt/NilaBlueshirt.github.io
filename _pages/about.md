@@ -10,14 +10,11 @@ redirect_from:
 {% include base_path %}
 
 <div class="contact-terminal">
-  <div class="contact-terminal__bar">
-    <span class="contact-terminal__dots" aria-hidden="true"><span class="contact-terminal__dot"></span><span class="contact-terminal__dot"></span><span class="contact-terminal__dot"></span></span>
-    <span class="contact-terminal__title" aria-hidden="true">contact</span>
-    <button type="button" class="contact-terminal__copy" data-copy-email="{{ site.author.email }}" hidden>Copy</button>
-  </div>
-  <div class="contact-terminal__body">
-    <p class="contact-terminal__line"><span class="contact-terminal__prompt" aria-hidden="true">mail </span><a class="contact-terminal__email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a><span class="contact-terminal__cursor" aria-hidden="true"></span></p>
-  </div>
+  <div class="contact-terminal__line"><span class="contact-terminal__prompt" aria-hidden="true">$</span> mail {{ site.author.email }}</div>
+  <button type="button" class="contact-terminal__copy" data-copy-email="{{ site.author.email }}" aria-label="Copy email address" title="Copy email address" hidden>
+    <svg class="contact-terminal__icon contact-terminal__icon--copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    <svg class="contact-terminal__icon contact-terminal__icon--done" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+  </button>
 </div>
 <script src="{{ base_path }}/assets/js/contact.js" defer></script>
 

@@ -6,6 +6,7 @@
     return;
   }
   var email = button.getAttribute("data-copy-email");
+  var label = button.getAttribute("aria-label");
 
   function fallback() {
     window.prompt("Copy the email address:", email);
@@ -15,9 +16,11 @@
   button.addEventListener("click", function () {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(email).then(function () {
-        button.textContent = "Copied";
+        button.classList.add("is-copied");
+        button.setAttribute("aria-label", "Copied");
         window.setTimeout(function () {
-          button.textContent = "Copy";
+          button.classList.remove("is-copied");
+          button.setAttribute("aria-label", label);
         }, 1500);
       }, fallback);
       return;
