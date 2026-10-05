@@ -7,6 +7,20 @@ redirect_from:
   - /about.html
 ---
 
+{% include base_path %}
+
+<div class="contact-terminal">
+  <div class="contact-terminal__bar">
+    <span class="contact-terminal__dots" aria-hidden="true"><span class="contact-terminal__dot"></span><span class="contact-terminal__dot"></span><span class="contact-terminal__dot"></span></span>
+    <span class="contact-terminal__title" aria-hidden="true">contact</span>
+    <button type="button" class="contact-terminal__copy" data-copy-email="{{ site.author.email }}" hidden>Copy</button>
+  </div>
+  <div class="contact-terminal__body">
+    <p class="contact-terminal__line"><span class="contact-terminal__prompt" aria-hidden="true">mail </span><a class="contact-terminal__email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a><span class="contact-terminal__cursor" aria-hidden="true"></span></p>
+  </div>
+</div>
+<script src="{{ base_path }}/assets/js/contact.js" defer></script>
+
 I am a **High-Performance Computing (HPC) Systems Administrator** in [Research Computing](https://cores.research.asu.edu/computing-and-data-services/research-computing/about/) at the [Research Technology Office](https://cores.research.asu.edu/), Arizona State University, where my work centers on high-performance computing for scientific discovery. Driven by a passion for science rooted in my bioinformatics background, I work to accelerate research through system optimization, research software engineering, user collaboration, and community education.
 
 My interests sit at the intersection of research software engineering, the development and optimization of reproducible, standards-based scientific computing pipelines on shared HPC systems, and the benchmarking and tuning of heterogeneous and AI-accelerated architectures. Day to day, I:

@@ -27,7 +27,8 @@ html[data-theme="lcars"] {
   .buns-donate__title,
   .buns-donate__button,
   .cite-dialog__title,
-  .cite-style__name {
+  .cite-style__name,
+  .contact-terminal__title {
     font-family: $lcars-font;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -195,7 +196,8 @@ html[data-theme="lcars"] {
     }
   }
 
-  .cite-style__copy {
+  .cite-style__copy,
+  .contact-terminal__copy {
     border: 0;
     background-color: var(--global-link-color);
     color: #000;
@@ -259,5 +261,38 @@ html[data-theme="lcars"] {
     &:hover {
       box-shadow: 0 0 18px rgba(255, 156, 0, 0.25);
     }
+  }
+
+  /* contact terminal: console panel with an end-cap, LCARS lights */
+  .contact-terminal {
+    border: 1px solid var(--global-border-color);
+    border-left: 1em solid var(--global-link-color);
+    border-radius: 1.6em 0.6em 0.6em 1.6em;
+    background-color: #000;
+
+    &:hover,
+    &:focus-within {
+      box-shadow: 0 0 18px rgba(255, 156, 0, 0.25);
+    }
+  }
+
+  .contact-terminal__bar {
+    border-bottom-color: var(--global-border-color);
+  }
+
+  .contact-terminal__dot {
+    background-color: #ff9c00;
+
+    &:nth-child(2) {
+      background-color: #cc99cc;
+    }
+
+    &:nth-child(3) {
+      background-color: #9999cc;
+    }
+  }
+
+  .contact-terminal__prompt::before {
+    color: var(--global-link-color);
   }
 }
