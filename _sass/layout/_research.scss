@@ -222,7 +222,7 @@
   }
 }
 
-/* Standalone pill link (e.g. the CV download button), matching the card pills */
+/* Standalone pill link (e.g. the CV download button): the card pill shape at body text size */
 .archive a.pill-button,
 .archive a.pill-button:visited,
 .page a.pill-button,
@@ -235,8 +235,8 @@
   border: 1px solid var(--global-border-color);
   border-radius: 999px;
   background: transparent;
-  font-size: $type-size-7;
-  font-weight: 600;
+  font-size: inherit;
+  font-weight: normal;
   line-height: 1.6;
   color: var(--global-text-color);
   text-decoration: none;

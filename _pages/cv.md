@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "Curriculum Vitæ"
+hide_title: true
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,7 +10,7 @@ redirect_from:
 
 {% include base_path %}
 
-<a href="{{ base_path }}/files/cv.pdf" class="pill-button" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i>Download PDF</a>
+<a href="{{ base_path }}/files/cv.pdf" class="pill-button" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i>Download Full CV</a>
 
 Education
 ======
