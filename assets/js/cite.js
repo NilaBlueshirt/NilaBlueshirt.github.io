@@ -72,7 +72,7 @@
     if (names.length > 0) {
       mla += mlaAuthors(names) + ". ";
     }
-    mla += "“" + title + ".” " + venue + ", " + year + ".";
+    mla += "\"" + title + ".\" " + venue + ", " + year + ".";
     if (doi) {
       mla += " doi:" + doi + ".";
     }
