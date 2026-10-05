@@ -34,7 +34,7 @@ Funding
 ======
 * USRSE Travel Grant — US-RSE'25
 * RMACC Scholarship — RMACC HPC Symposium 2026
-* Cyberinfrastructure Community-wide Mentorship Network (CCMNet) Travel Grant — PEARC'26
+* CCMNet Travel Grant — PEARC'26
 * Supercomputing Early Career Program & Travel Grant - SC '26
 
 Service
