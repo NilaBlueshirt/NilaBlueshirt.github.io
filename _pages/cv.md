@@ -10,7 +10,7 @@ redirect_from:
 
 {% include base_path %}
 
-<a href="{{ base_path }}/files/cv.pdf" class="pill-button" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i>Download Full CV</a>
+<a href="mailto:{{ site.author.email }}?subject=CV%20request" class="pill-button"><i class="fas fa-envelope" aria-hidden="true"></i>Full CV available on request</a>
 
 Education
 ======
@@ -35,7 +35,6 @@ Funding
 * USRSE Travel Grant — US-RSE'25
 * RMACC Scholarship — RMACC HPC Symposium 2026
 * Cyberinfrastructure Community-wide Mentorship Network (CCMNet) Travel Grant — PEARC'26
-* Better Scientific Software (BSSw) Fellowship Program — 2027 cycle (Application in preparation)
 * Supercomputing Early Career Program & Travel Grant - SC '26
 
 Service
