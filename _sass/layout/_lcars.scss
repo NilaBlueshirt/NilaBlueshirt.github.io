@@ -269,7 +269,9 @@ html[data-theme="lcars"] {
     background-color: #000;
 
     &:hover,
-    &:focus-within {
+    &:has(:focus-visible) {
+      border-color: var(--global-dark-border-color);
+      border-left-color: var(--global-link-color-hover);
       box-shadow: 0 0 18px rgba(255, 156, 0, 0.25);
     }
   }

@@ -12,14 +12,23 @@
   width: 100%;
   margin: 0 0 2em;
   padding: 1em 0.8em 1em 1.1em;
-  border: 1px solid var(--global-dark-border-color);
+  border: 1px solid var(--global-border-color);
   border-radius: 10px;
   background-color: var(--global-bg-color);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
   font-family: $monospace;
   font-size: 0.9em;
   line-height: 1.7;
   color: var(--global-text-color);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+  /* plain at rest; lifts like a Research card (layout/_research.scss) on
+     hover or keyboard focus, but not after a mouse click on the copy icon */
+  &:hover,
+  &:has(:focus-visible) {
+    transform: translateY(-2px) scale(1.02);
+    border-color: var(--global-dark-border-color);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .contact-terminal__line {
@@ -75,6 +84,15 @@
 
 .contact-terminal__copy.is-copied .contact-terminal__icon--done {
   display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-terminal,
+  .contact-terminal:hover,
+  .contact-terminal:has(:focus-visible) {
+    transform: none;
+    transition: none;
+  }
 }
 
 @include breakpoint(max-width $small) {
