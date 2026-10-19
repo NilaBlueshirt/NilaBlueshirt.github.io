@@ -97,16 +97,8 @@
       {% if post.bibtexurl %}
         <a class="research-card__link" href="{{ post.bibtexurl }}" target="_blank" rel="noopener"><i class="fas fa-file-code" aria-hidden="true"></i>BibTeX</a>
       {% endif %}
-      {% if post.collection == "publications" %}
-        <button type="button" class="research-card__link research-card__link--cite" data-cite
-          data-title="{{ post.title | escape }}"
-          data-venue="{{ post.venue | escape }}"
-          data-year="{{ post.date | default: '1900-01-01' | date: '%Y' }}"
-          data-entrytype="{% if post.category == 'manuscripts' %}article{% elsif post.category == 'conferences' %}inproceedings{% else %}misc{% endif %}"
-          data-key="{{ post.permalink | slugify | remove_first: 'publication-' }}"
-          {% if post.authors %}data-authors="{{ post.authors | join: '|' | escape }}"{% endif %}
-          {% if post.doi %}data-doi="{{ post.doi }}"{% endif %}
-          {% if post.paperurl %}data-url="{{ post.paperurl }}"{% endif %}><i class="fas fa-quote-right" aria-hidden="true"></i>Cite</button>
+      {% if post.collection == "publications" and title_url %}
+        <a class="research-card__link" href="{{ title_url }}" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>Link</a>
       {% endif %}
       {% if related_item %}
         <a class="research-card__link research-card__link--related" href="#{{ related_item.permalink | slugify }}"><i class="fas fa-link" aria-hidden="true"></i>Related {{ related_kind }}</a>

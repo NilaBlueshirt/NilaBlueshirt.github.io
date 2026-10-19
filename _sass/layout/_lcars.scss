@@ -26,9 +26,7 @@ html[data-theme="lcars"] {
   .research-card__featured,
   .research-card__year,
   .buns-donate__title,
-  .buns-donate__button,
-  .cite-dialog__title,
-  .cite-style__name {
+  .buns-donate__button {
     font-family: $lcars-font;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -185,36 +183,6 @@ html[data-theme="lcars"] {
   .page a.pill-button:focus-visible {
     background-color: var(--global-link-color-hover);
     color: #000;
-  }
-
-  /* cite dialog: console readout */
-  .cite-dialog {
-    border: 1px solid var(--global-border-color);
-    border-left: 1em solid var(--global-link-color);
-    border-radius: 1.6em 0.6em 0.6em 1.6em;
-    background-color: #000;
-
-    &::backdrop {
-      background: rgba(0, 0, 0, 0.7);
-    }
-  }
-
-  .cite-style__copy {
-    border: 0;
-    background-color: var(--global-link-color);
-    color: #000;
-    font-family: $lcars-font;
-    text-transform: uppercase;
-
-    &:hover,
-    &:focus-visible {
-      background-color: var(--global-link-color-hover);
-      color: #000;
-    }
-  }
-
-  .cite-style__text {
-    background-color: var(--global-code-background-color);
   }
 
   /* sidebar & footer */
