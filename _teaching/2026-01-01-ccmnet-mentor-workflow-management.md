@@ -4,6 +4,7 @@ collection: teaching
 type: "Mentorship"
 permalink: /teaching/2026-01-01-ccmnet-mentor-workflow-management
 topic: workflows
+ongoing: true
 link: https://ccmnet.org/mentorships/tuning-workflow-management-system-shared-hpc-resources
 venue: "Cyberinfrastructure Community-wide Mentorship Network (CCMNet)"
 date: 2026-01-01
