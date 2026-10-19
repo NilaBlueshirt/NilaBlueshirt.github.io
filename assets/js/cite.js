@@ -132,7 +132,8 @@
       copyText(text, copy);
     });
     var pre = document.createElement("pre");
-    pre.className = "cite-style__text";
+    // BibTeX reads as code; APA and MLA as prose
+    pre.className = name === "BibTeX" ? "cite-style__text cite-style__text--code" : "cite-style__text";
     pre.textContent = text;
     head.appendChild(label);
     head.appendChild(copy);

@@ -376,19 +376,21 @@
   padding: 1.3em 1.5em 1.5em;
 }
 
+/* heading rule matches the Research section headings */
 .cite-dialog__head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 1.1em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid var(--global-border-color);
 }
 
 .cite-dialog__title {
   margin: 0;
-  font-size: 1.1em;
+  font-size: $type-size-4;
   font-weight: 600;
-  letter-spacing: -0.01em;
 }
 
 .cite-dialog__close {
@@ -407,6 +409,17 @@
   &:focus-visible {
     color: var(--global-text-color);
   }
+}
+
+/* focus rings in the theme's link color */
+.cite-dialog__close:focus-visible,
+.cite-style__copy:focus-visible {
+  outline: 2px solid var(--global-link-color);
+  outline-offset: 2px;
+}
+
+.cite-dialog__close:focus-visible {
+  border-radius: 6px;
 }
 
 .cite-style {
@@ -462,12 +475,22 @@
   border: 1px solid var(--global-border-color);
   border-radius: 8px;
   background: transparent;
-  font-family: $monospace;
-  font-size: 0.85em;
-  line-height: 1.55;
+  font-family: inherit;
+  font-size: 0.95em;
+  line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-word;
   color: var(--global-text-color);
+}
+
+/* BibTeX: a code block in the theme's code colors */
+.cite-style__text--code {
+  border-color: transparent;
+  background-color: var(--global-code-background-color);
+  font-family: $monospace;
+  font-size: 0.85em;
+  line-height: 1.55;
+  color: var(--global-code-text-color);
 }
 
 /* touch devices have no hover: keep the description in the card flow */
