@@ -12,6 +12,7 @@ citation: 'Operationalizing Workflow Support on Slurm: A Site Toolkit for Choosi
 paperurl: https://arxiv.org/abs/2608.13824
 codeurl: https://github.com/NilaBlueshirt/WfTune
 pypiurl: https://pypi.org/project/wftune/
+logo: /images/wftune-logo.png
 authors:
   - 'Nil Tianchen Mu'
   - 'William Dizon'

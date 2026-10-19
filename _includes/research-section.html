@@ -2,7 +2,11 @@
     as the include parameter `entries`. Featured entries (featured: <rank> in frontmatter, 1 = first) sit in a highlights row
     in rank order; the rest follow as the masonry grid. {% endcomment %}
 {% assign section_featured = include.entries | where_exp: "item", "item.featured" | sort: "featured" %}
-{% assign section_rest = include.entries | where_exp: "item", "item.featured == nil" %}
+{% comment %} Ongoing entries (ongoing: true) lead the grid. {% endcomment %}
+{% assign section_unfeatured = include.entries | where_exp: "item", "item.featured == nil" %}
+{% assign section_ongoing = section_unfeatured | where_exp: "item", "item.ongoing" %}
+{% assign section_past = section_unfeatured | where_exp: "item", "item.ongoing == nil" %}
+{% assign section_rest = section_ongoing | concat: section_past %}
 
 {% if section_featured.size > 0 %}
 <div class="research-featured">

@@ -150,8 +150,46 @@
     color: var(--global-link-color);
   }
 
+  .research-card__ongoing {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #859900;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 0.55em;
+      height: 0.55em;
+      margin-right: 0.55em;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+  }
+
   .research-card__year {
     white-space: nowrap;
+  }
+
+  /* title with a logo beside it */
+  .research-card__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+
+    .research-card__title {
+      flex: 1;
+    }
+  }
+
+  .research-card__logo {
+    flex: none;
+    width: 3.25em;
+    height: auto;
+    margin-top: 0.2em;
   }
 
   .research-card__title {

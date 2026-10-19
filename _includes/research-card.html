@@ -59,11 +59,18 @@
     <span class="research-card__tag research-card__tag--{{ tag_mod }}">{{ tag_label | escape }}</span>
     <span class="research-card__meta">
       {% if post.featured %}<span class="research-card__featured"><i class="fas fa-star" aria-hidden="true"></i>Featured</span>{% endif %}
-      <time class="research-card__year" itemprop="datePublished" datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%Y" }}</time>
+      {% comment %} Ongoing work (ongoing: true) shows a label in place of the year. {% endcomment %}
+      {% if post.ongoing %}
+        <span class="research-card__ongoing">Ongoing</span>
+      {% else %}
+        <time class="research-card__year" itemprop="datePublished" datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%Y" }}</time>
+      {% endif %}
     </span>
   </p>
 
   {% assign title_url = post.paperurl | default: post.link | default: post.slidesurl %}
+  {% comment %} An optional logo (logo: /images/... in frontmatter) sits beside the title. {% endcomment %}
+  {% if post.logo %}<div class="research-card__head">{% endif %}
   <h3 class="research-card__title" itemprop="headline">
     {% if title_url %}
       <a href="{{ title_url }}" target="_blank" rel="noopener">{{ r_title }}<span class="sr-only"> (opens in a new tab)</span></a>
@@ -71,6 +78,10 @@
       <span class="research-card__title-text">{{ r_title }}</span>
     {% endif %}
   </h3>
+  {% if post.logo %}
+    <img class="research-card__logo" src="{{ base_path }}{{ post.logo }}" alt="">
+  </div>
+  {% endif %}
 
   {% if post.venue %}
     <p class="research-card__venue">{{ post.venue }}</p>
