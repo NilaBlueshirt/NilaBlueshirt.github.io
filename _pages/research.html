@@ -11,7 +11,7 @@ redirect_from:
 
 {% include base_path %}
 
-{% assign entries = site.publications | concat: site.talks | sort: "date" | reverse %}
+{% assign entries = site.publications | concat: site.talks | concat: site.portfolio | sort: "date" | reverse %}
 
 {% comment %} Topic sections come from research_topics in _config.yml, in that order. {% endcomment %}
 {% for topic in site.research_topics %}

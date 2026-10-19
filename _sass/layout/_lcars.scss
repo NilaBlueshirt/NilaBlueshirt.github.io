@@ -117,11 +117,13 @@ html[data-theme="lcars"] {
     &:has(.research-card__tag--conferences) { border-left-color: #cc99cc; }
     &:has(.research-card__tag--talks) { border-left-color: #ff9c00; }
     &:has(.research-card__tag--teaching) { border-left-color: #ffcc66; }
+    &:has(.research-card__tag--portfolio) { border-left-color: #9999ff; }
 
     .research-card__tag--manuscripts::before { background-color: #99ccff; }
     .research-card__tag--conferences::before { background-color: #cc99cc; }
     .research-card__tag--talks::before { background-color: #ff9c00; }
     .research-card__tag--teaching::before { background-color: #ffcc66; }
+    .research-card__tag--portfolio::before { background-color: #9999ff; }
 
     .research-card__title a,
     .research-card__title a:visited,

@@ -129,6 +129,10 @@
     background-color: #859900;
   }
 
+  .research-card__tag--portfolio::before {
+    background-color: #2aa198;
+  }
+
   .research-card__meta {
     display: inline-flex;
     align-items: center;

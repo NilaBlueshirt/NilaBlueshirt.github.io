@@ -3,6 +3,7 @@ title: "A DNA Criticality-Detector Circuit in E. coli for Automatic Medicine-Dos
 collection: talks
 type: "Poster & Slides"
 permalink: /talks/2015-09-01-igem-dna-criticality-detector-circuit
+topic: compbio
 venue: "International Genetically Engineered Machine (iGEM) 2015 Jamboree"
 date: 2015-09-01
 location: "Boston, MA, USA"

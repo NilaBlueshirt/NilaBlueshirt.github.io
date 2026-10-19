@@ -3,6 +3,7 @@ title: "Operational Data Analytics: Agentic AI for HPC Facilities"
 collection: talks
 type: "Birds of a Feather"
 permalink: /talks/2026-11-01-oda-agentic-ai-hpc-facilities-bof
+topic: benchmarking
 venue: "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC26)"
 date: 2026-11-01
 location: "Chicago, IL, USA"

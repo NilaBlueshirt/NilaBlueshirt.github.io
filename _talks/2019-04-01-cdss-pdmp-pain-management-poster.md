@@ -3,6 +3,7 @@ title: "A Clinical Decision Support System Based on Prescription Drug Monitoring
 collection: talks
 type: "Poster"
 permalink: /talks/2019-04-01-cdss-pdmp-pain-management-poster
+topic: compbio
 venue: "5th Annual Mayo Clinic–ASU BMI/BMD Student Poster and Employer Networking Event"
 date: 2019-04-01
 location: "Phoenix, AZ, USA"

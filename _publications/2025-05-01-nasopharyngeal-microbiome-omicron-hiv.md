@@ -3,6 +3,7 @@ title: "Longitudinal dynamics of the nasopharyngeal microbiome in response to SA
 collection: publications
 category: manuscripts
 permalink: /publication/2025-05-01-nasopharyngeal-microbiome-omicron-hiv
+topic: compbio
 excerpt: 'Followed the nasopharyngeal microbiome of Kenyan mothers and their children before, during, and after SARS-CoV-2 Omicron infection in a longitudinal cohort that included women living with HIV. Genomic epidemiology showed mother and child pairs carried the same rapidly spreading Omicron strain, and the cohort design separates how infection and HIV exposure each shape the airway microbiome.'
 date: 2025-05-01
 venue: 'mSystems, American Society for Microbiology'

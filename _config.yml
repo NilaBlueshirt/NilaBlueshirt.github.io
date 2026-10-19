@@ -97,6 +97,10 @@ publication_category:
 research_topics:
   workflows:
     title: 'Workflows on Shared HPC'
+  benchmarking:
+    title: 'HPC Benchmarking'
+  compbio:
+    title: 'Computational Biology'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
