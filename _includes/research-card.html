@@ -40,14 +40,27 @@
 {% endif %}
 
 {% assign has_links = false %}
-{% if post.collection == "publications" or post.slidesurl or post.bibtexurl or related_item %}
+{% if post.collection == "publications" or post.slidesurl or post.codeurl or post.pypiurl or post.bibtexurl or related_item %}
   {% assign has_links = true %}
 {% endif %}
 
-<article id="{{ post.permalink | slugify }}" class="research-card" itemscope itemtype="http://schema.org/CreativeWork">
+{% comment %} Featured cards (featured: <rank> in frontmatter) show the description in
+    the card instead of in the hover panel. {% endcomment %}
+{% if post.featured %}
+  {% assign card_mod = " research-card--featured" %}
+  {% assign excerpt_class = "research-card__summary" %}
+{% else %}
+  {% assign card_mod = "" %}
+  {% assign excerpt_class = "research-card__excerpt" %}
+{% endif %}
+
+<article id="{{ post.permalink | slugify }}" class="research-card{{ card_mod }}" itemscope itemtype="http://schema.org/CreativeWork">
   <p class="research-card__eyebrow">
     <span class="research-card__tag research-card__tag--{{ tag_mod }}">{{ tag_label | escape }}</span>
-    <time class="research-card__year" itemprop="datePublished" datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%Y" }}</time>
+    <span class="research-card__meta">
+      {% if post.featured %}<span class="research-card__featured"><i class="fas fa-star" aria-hidden="true"></i>Featured</span>{% endif %}
+      <time class="research-card__year" itemprop="datePublished" datetime="{{ post.date | default: '1900-01-01' | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%Y" }}</time>
+    </span>
   </p>
 
   {% assign title_url = post.paperurl | default: post.link | default: post.slidesurl %}
@@ -64,13 +77,19 @@
   {% endif %}
 
   {% if post.excerpt %}
-    <p class="research-card__excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html }}</p>
+    <p class="{{ excerpt_class }}" itemprop="description">{{ post.excerpt | markdownify | strip_html }}</p>
   {% endif %}
 
   {% if has_links %}
     <div class="research-card__links">
       {% if post.slidesurl %}
         <a class="research-card__link" href="{{ post.slidesurl }}" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i>Slides</a>
+      {% endif %}
+      {% if post.codeurl %}
+        <a class="research-card__link" href="{{ post.codeurl }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i>Code</a>
+      {% endif %}
+      {% if post.pypiurl %}
+        <a class="research-card__link" href="{{ post.pypiurl }}" target="_blank" rel="noopener"><i class="fab fa-python" aria-hidden="true"></i>PyPI</a>
       {% endif %}
       {% if post.bibtexurl %}
         <a class="research-card__link" href="{{ post.bibtexurl }}" target="_blank" rel="noopener"><i class="fas fa-file-code" aria-hidden="true"></i>BibTeX</a>

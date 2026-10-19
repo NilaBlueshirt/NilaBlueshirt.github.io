@@ -66,6 +66,8 @@
     }
     if (doi) {
       apa += " https://doi.org/" + doi;
+    } else if (d.url) {
+      apa += " " + d.url;
     }
 
     var mla = "";
@@ -75,6 +77,8 @@
     mla += "\"" + title + ".\" " + venue + ", " + year + ".";
     if (doi) {
       mla += " doi:" + doi + ".";
+    } else if (d.url) {
+      mla += " " + d.url + ".";
     }
 
     var field = d.entrytype === "article" ? "journal" : "booktitle";

@@ -91,6 +91,13 @@ publication_category:
     title: 'Conference Papers'
     tag: 'Conference Paper'
 
+# Research Topics - sections at the top of the Research page, in this order. Set
+# `topic: <key>` on a publication or talk to place it in a section; entries without
+# a topic are listed under "Other research".
+research_topics:
+  workflows:
+    title: 'Workflows on Shared HPC'
+
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)

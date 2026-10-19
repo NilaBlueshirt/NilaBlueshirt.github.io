@@ -3,6 +3,8 @@ title: "Ten Practices for Refactoring Scientific Pipelines to nf-core DSL2 on Sh
 collection: publications
 category: conferences
 permalink: /publication/2026-10-01-ten-practices-refactoring-nf-core-dsl2
+featured: 2
+topic: workflows
 excerpt: 'Ten practical recommendations for refactoring scientific pipelines to the nf-core DSL2 standard on shared, Slurm-scheduled HPC systems.'
 date: 2026-10-01
 venue: 'US Research Software Engineer Association (US-RSE)'

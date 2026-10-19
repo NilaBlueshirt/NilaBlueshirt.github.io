@@ -23,6 +23,7 @@ html[data-theme="lcars"] {
   .masthead__menu-item a,
   .research-card__title,
   .research-card__tag,
+  .research-card__featured,
   .research-card__year,
   .buns-donate__title,
   .buns-donate__button,
@@ -33,7 +34,8 @@ html[data-theme="lcars"] {
     letter-spacing: 0.05em;
   }
 
-  .page__title {
+  .page__title,
+  .research-section__title {
     color: var(--global-link-color);
   }
 

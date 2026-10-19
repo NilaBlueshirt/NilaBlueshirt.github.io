@@ -28,6 +28,28 @@
   }
 }
 
+/* highlights row above the timeline: featured cards side by side at equal
+   height, stacking on narrow screens */
+.research-featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  gap: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* topic sections: a heading over each section's highlights row and grid */
+.research-section + .research-section {
+  margin-top: 2.5em;
+}
+
+.research-section__title {
+  margin: 0 0 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--global-border-color);
+  font-size: $type-size-4;
+  font-weight: 600;
+}
+
 .research-card {
   position: relative;
   display: flex;
@@ -107,6 +129,23 @@
     background-color: #859900;
   }
 
+  .research-card__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75em;
+  }
+
+  .research-card__featured {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--global-link-color);
+  }
+
   .research-card__year {
     white-space: nowrap;
   }
@@ -173,11 +212,25 @@
     visibility: visible;
   }
 
+  /* featured cards keep the description in the card */
+  .research-card__summary {
+    margin: 0.8em 0 0;
+    font-size: 0.85em;
+    line-height: 1.6;
+    color: var(--global-text-color);
+  }
+
   .research-card__links {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5em;
     margin-top: 1.2em;
+  }
+
+  /* pin the links to the bottom so side-by-side featured cards line up */
+  &.research-card--featured .research-card__links {
+    margin-top: auto;
+    padding-top: 1.2em;
   }
 
   a.research-card__link,
@@ -216,7 +269,8 @@
     border-style: dashed;
   }
 
-  .research-card__link .fas {
+  .research-card__link .fas,
+  .research-card__link .fab {
     font-size: 0.9em;
     opacity: 0.75;
   }
@@ -407,7 +461,17 @@
     row-gap: 1em;
   }
 
-  .research-grid--masonry .research-card {
+  /* keep the masonry row gap at 0, or every 2px row gets a 1em gap */
+  .research-grid--masonry {
+    row-gap: 0;
+
+    .research-card {
+      margin-bottom: 1em;
+    }
+  }
+
+  .research-featured {
+    gap: 1em;
     margin-bottom: 1em;
   }
 

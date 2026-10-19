@@ -12,11 +12,25 @@ redirect_from:
 {% include base_path %}
 
 {% assign entries = site.publications | concat: site.talks | sort: "date" | reverse %}
-<div class="research-grid" data-masonry>
-  {% for post in entries %}
-    {% include research-card.html %}
-  {% endfor %}
-</div>
+
+{% comment %} Topic sections come from research_topics in _config.yml, in that order. {% endcomment %}
+{% for topic in site.research_topics %}
+  {% assign topic_entries = entries | where: "topic", topic[0] %}
+  {% if topic_entries.size > 0 %}
+  <section class="research-section" aria-labelledby="topic-{{ topic[0] }}">
+    <h2 id="topic-{{ topic[0] }}" class="research-section__title">{{ topic[1].title }}</h2>
+    {% include research-section.html entries=topic_entries %}
+  </section>
+  {% endif %}
+{% endfor %}
+
+{% assign other_entries = entries | where_exp: "item", "item.topic == nil" %}
+{% if other_entries.size > 0 %}
+<section class="research-section" aria-labelledby="topic-other">
+  <h2 id="topic-other" class="research-section__title">Other research</h2>
+  {% include research-section.html entries=other_entries %}
+</section>
+{% endif %}
 
 <dialog id="cite-dialog" class="cite-dialog" aria-labelledby="cite-dialog-title">
   <div class="cite-dialog__panel">

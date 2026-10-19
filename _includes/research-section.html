@@ -1,0 +1,21 @@
+{% comment %} One section of the Research page; pass the section's entries, newest first,
+    as the include parameter `entries`. Featured entries (featured: <rank> in frontmatter, 1 = first) sit in a highlights row
+    in rank order; the rest follow as the masonry grid. {% endcomment %}
+{% assign section_featured = include.entries | where_exp: "item", "item.featured" | sort: "featured" %}
+{% assign section_rest = include.entries | where_exp: "item", "item.featured == nil" %}
+
+{% if section_featured.size > 0 %}
+<div class="research-featured">
+  {% for post in section_featured %}
+    {% include research-card.html %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if section_rest.size > 0 %}
+<div class="research-grid" data-masonry>
+  {% for post in section_rest %}
+    {% include research-card.html %}
+  {% endfor %}
+</div>
+{% endif %}

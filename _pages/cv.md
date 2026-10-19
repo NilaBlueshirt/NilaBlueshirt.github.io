@@ -35,12 +35,12 @@ Funding
 * USRSE Travel Grant — US-RSE'25
 * RMACC Scholarship — RMACC HPC Symposium 2026
 * CCMNet Travel Grant — PEARC'26
-* Supercomputing Early Career Program & Travel Grant - SC '26
+* SC Early Career Program & Travel Grant — SC'26
 
 Service
 ======
 * Committee Member, Scientific Subcommittee on IT and Informatics, Earth BioGenome Project
-* Planning Committee Member, Operational Data Analytics (ODA) Birds-of-a-Feather session, SC26
+* Co-organizer, "Operational Data Analytics: Agentic AI for HPC Facilities" Birds-of-a-Feather session, SC26
 * ASU Cluster Representative, Energy Efficient HPC Working Group (EE HPC WG)
 * Mentor, "Tuning Workflow Management Systems on HPC," Cyberinfrastructure Community-wide Mentorship Network (CCMNet), 2026
 * Cyberinfrastructure Facilitator, CIREN project, 2026
