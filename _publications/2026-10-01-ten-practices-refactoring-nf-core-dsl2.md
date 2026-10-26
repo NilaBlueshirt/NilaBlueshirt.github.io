@@ -11,6 +11,7 @@ venue: 'US Research Software Engineer Association (US-RSE)'
 citation: 'Ten Practices for Refactoring Scientific Pipelines to nf-core DSL2 on Shared Slurm HPC. <i>US-RSE</i> (2026). Long paper. doi:10.5281/zenodo.22921770'
 paperurl: https://doi.org/10.5281/zenodo.22921770
 doi: 10.5281/zenodo.22921770
+skillurl: https://github.com/NilaBlueshirt/WfTune/tree/main/skill/wms-hpc-refactor
 authors:
   - 'Nil Tianchen Mu'
   - 'William Dizon'

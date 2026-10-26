@@ -40,7 +40,7 @@
 {% endif %}
 
 {% assign has_links = false %}
-{% if post.collection == "publications" or post.slidesurl or post.codeurl or post.pypiurl or post.top500url or post.committeeurl or post.bibtexurl or related_item %}
+{% if post.collection == "publications" or post.slidesurl or post.codeurl or post.skillurl or post.pypiurl or post.top500url or post.committeeurl or post.bibtexurl or related_item %}
   {% assign has_links = true %}
 {% endif %}
 
@@ -98,6 +98,9 @@
       {% endif %}
       {% if post.codeurl %}
         <a class="research-card__link" href="{{ post.codeurl }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i>Code</a>
+      {% endif %}
+      {% if post.skillurl %}
+        <a class="research-card__link" href="{{ post.skillurl }}" target="_blank" rel="noopener"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>Skill</a>
       {% endif %}
       {% if post.pypiurl %}
         <a class="research-card__link" href="{{ post.pypiurl }}" target="_blank" rel="noopener"><i class="fab fa-python" aria-hidden="true"></i>PyPI</a>
