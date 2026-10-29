@@ -16,7 +16,6 @@ Education
 ======
 * M.S. in Computer Science (Biomedical Informatics), Arizona State University, 2023
 * B.S. in Computer Science, Arizona State University, 2022
-* B.S. in Biology, Wuhan University, 2017
 
 Professional Experience
 ======

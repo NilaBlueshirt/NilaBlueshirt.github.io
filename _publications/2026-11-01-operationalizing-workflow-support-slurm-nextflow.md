@@ -5,7 +5,7 @@ category: conferences
 permalink: /publication/2026-11-01-operationalizing-workflow-support-slurm-nextflow
 featured: 1
 topic: workflows
-excerpt: 'A site toolkit for choosing how to deploy Nextflow workflows on Slurm. The paper introduces WfTune, open-source software that measures workflow completion time alongside the load each deployment strategy places on the scheduler, so HPC teams can weigh speed against Slurm stress on their own systems.'
+excerpt: 'Introduces WfTune, an open-source framework for benchmarking workflow configurations, deployment strategies, and their interactions with local HPC schedulers. MIT-licensed and available on PyPI, it is extensible and portable across workflow managers, pipelines, and HPC sites. Across four Nextflow deployment strategies on two ASU clusters, the tuned pipeline cut completion time by over 50% while reducing scheduler stress.'
 date: 2026-11-01
 venue: 'HPC Systems Professionals Workshop (HPCSYSPROS) at SC26'
 citation: 'Operationalizing Workflow Support on Slurm: A Site Toolkit for Choosing Nextflow Deployment Strategies. <i>HPCSYSPROS at SC26</i> (2026). Workshop paper. https://arxiv.org/abs/2608.13824'
