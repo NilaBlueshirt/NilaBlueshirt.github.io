@@ -42,7 +42,7 @@ Service
 * Committee Member, Scientific Subcommittee on IT and Informatics, Earth BioGenome Project
 * Co-organizer, "Operational Data Analytics: Agentic AI for HPC Facilities" Birds-of-a-Feather session, SC26
 * ASU Cluster Representative, Energy Efficient HPC Working Group (EE HPC WG)
-* Mentor, "Tuning Workflow Management System on Shared HPC Resources," Cyberinfrastructure Community-wide Mentorship Network (CCMNet), 2026
+* Mentor, "[Tuning Workflow Management System on Shared HPC Resources](https://ccmnet.org/mentorships/tuning-workflow-management-system-shared-hpc-resources)," Cyberinfrastructure Community-wide Mentorship Network (CCMNet), 2026
 * Cyberinfrastructure Facilitator, CIREN project, 2026
 * Certified Instructor, The Carpentries, 2024 – present
 * Grant Reviewer, NAIRR Pilot Project, 2026

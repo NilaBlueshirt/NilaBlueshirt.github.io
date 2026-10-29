@@ -7,6 +7,7 @@ topic: benchmarking
 venue: "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC26)"
 date: 2026-11-01
 location: "Chicago, IL, USA"
+link: https://sc26.conference-program.com/presentation/?id=bof215&sess=sess395
 ---
 
 Birds of a Feather session on operational data analytics (ODA) for HPC facilities, centered on agentic AI and how it can put the telemetry and operational data that sites collect to work. Co-organized with the ODA planning committee.

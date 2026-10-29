@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nil Tianchen Mu — Curriculum Vitae</title>
+<meta name="author" content="Nil Tianchen Mu">
+<style>
+  @page {
+    size: Letter;
+    margin: 0.45in 0.5in 0.5in;
+    @bottom-right {
+      content: "Nil Tianchen Mu · CV · " counter(page) " of " counter(pages);
+      font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+      font-size: 7.5pt;
+      color: #8a8f98;
+    }
+  }
+
+  :root {
+    --ink: #1c1f24;
+    --muted: #555b65;
+    --faint: #8a8f98;
+    --accent: #1d5175;
+    --rule: #c9d3dc;
+    --sans: "Avenir Next", "Helvetica Neue", sans-serif;
+    --serif: "Charter", "Iowan Old Style", Georgia, serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: var(--serif);
+    font-size: 9.15pt;
+    line-height: 1.27;
+    color: var(--ink);
+    background: #fff;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* Header */
+  header { text-align: center; margin-bottom: 6pt; }
+  h1 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 21pt;
+    letter-spacing: 0.01em;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+  .tagline {
+    font-family: var(--sans);
+    font-size: 9pt;
+    color: var(--muted);
+    margin-top: 2pt;
+  }
+  .contact {
+    font-family: var(--sans);
+    font-size: 8pt;
+    color: var(--ink);
+    margin-top: 3pt;
+  }
+  .contact span + span::before { content: "·"; color: var(--faint); margin: 0 4pt; }
+
+  /* Sections */
+  section { margin-top: 7.5pt; }
+  h2 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 9.2pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 0.75pt solid var(--rule);
+    padding-bottom: 1.5pt;
+    margin-bottom: 4.5pt;
+    break-after: avoid;
+  }
+  h3 {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 8.4pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 5pt 0 2.5pt;
+    break-after: avoid;
+  }
+  h2 + h3 { margin-top: 0; }
+
+  /* Positions */
+  .entry { margin-bottom: 5pt; }
+  .head, .org { break-after: avoid; }
+  ul.bullets li { break-inside: avoid; }
+  .entry:last-child { margin-bottom: 0; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .title { font-weight: 700; }
+  .date {
+    font-family: var(--sans);
+    font-size: 8.4pt;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .org { font-style: italic; color: var(--muted); }
+
+  ul.bullets { list-style: none; margin-top: 1.5pt; }
+  ul.bullets li { position: relative; padding-left: 10pt; margin-top: 1pt; }
+  ul.bullets li::before {
+    content: "";
+    position: absolute;
+    left: 2pt;
+    top: 0.58em;
+    width: 3pt;
+    height: 3pt;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* One-line rows with a right-aligned date */
+  ul.rows { list-style: none; }
+  ul.rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; margin-bottom: 1.6pt; }
+  ul.rows li > span:first-child { flex: 1; }
+
+  /* Publications and presentations */
+  ol.refs { list-style: none; }
+  ol.refs li { padding-left: 12pt; text-indent: -12pt; margin-bottom: 3pt; break-inside: avoid; }
+  .me { font-weight: 700; }
+  .venue { font-style: italic; }
+  .nw { white-space: nowrap; }
+  a.link { color: var(--accent); }
+  .note { color: var(--muted); }
+  .id {
+    font-family: var(--sans);
+    font-size: 7.8pt;
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Nil Tianchen Mu</h1>
+  <div class="tagline">HPC systems administration · research software engineering · scientific workflows · bioinformatics</div>
+  <div class="contact">
+    <span>Tempe, AZ</span>
+    <span><a href="mailto:nil.mu@asu.edu">nil.mu@asu.edu</a></span>
+    <span><a href="https://nilablueshirt.github.io">nilablueshirt.github.io</a></span>
+    <span><a href="https://linkedin.com/in/nilmu">linkedin.com/in/nilmu</a></span>
+    <span><a href="https://orcid.org/0000-0002-0271-0941">orcid.org/0000-0002-0271-0941</a></span>
+  </div>
+</header>
+
+<section>
+  <h2>Education</h2>
+  <ul class="rows">
+    <li><span><b>M.S., Computer Science (Biomedical Informatics)</b>, <span class="org">Arizona State University, Tempe, AZ</span></span><span class="date">2023</span></li>
+    <li><span><b>B.S., Computer Science</b>, <span class="org">Arizona State University, Tempe, AZ</span></span><span class="date">2022</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+
+  <div class="entry">
+    <div class="head"><span class="title">HPC Systems Administrator</span><span class="date">Jan 2024 – Present</span></div>
+    <div class="org">Research Computing, Research Technology Office, Arizona State University — Tempe, AZ</div>
+    <ul class="bullets">
+      <li>Benchmark ASU supercomputers for the <a class="link" href="https://top500.org/site/50960/">TOP500</a> and other lists with HPL, HPCG, and HPL-MxP.</li>
+      <li>Created a ReFrame test suite for post-maintenance validation, which performs node-level and MPI checks across clusters, supporting rapid troubleshooting before returning systems to production.</li>
+      <li>Port bioinformatics software, protein foundation models, and other scientific applications to Intel Gaudi2 accelerators and benchmark their performance.</li>
+      <li>Tune workflow management systems for shared Slurm clusters; created <a class="link" href="https://github.com/NilaBlueshirt/WfTune">WfTune</a>, an open-source toolkit for reproducible comparisons of workflow performance and scheduler demand, supporting Nextflow and Snakemake.</li>
+      <li>Refactor genomic pipelines for the <a class="link" href="https://www.earthbiogenome.org/">Earth BioGenome</a> and <a class="link" href="https://www.biorxiv.org/content/10.64898/2026.06.24.732306v1.abstract">Vertebrate Genomes</a> projects, including the nf-core-style Nextflow DSL2 rewrite of the Hiller Lab’s make_lastz_chains, merged upstream in May 2026 (third-largest contributor by commits).</li>
+      <li>Created the <a class="link" href="https://github.com/NilaBlueshirt/WfTune/tree/main/skill/wms-hpc-refactor">wms-hpc-refactor</a> agent skill, encoding the ten practices from the US-RSE’26 paper for AI-assisted workflow refactoring.</li>
+      <li>Develop a large-scale Nextflow virus detection and discovery pipeline with the <a class="link" href="https://science.nasa.gov/biological-physical/data/awg/">NASA OSDR Microbiome Analysis Working Group</a>.</li>
+      <li>Facilitate a <a class="link" href="https://ciren.asu.edu/research/">CIREN</a> project with Michael Lynch that simulates how early RNA-like organisms evolve under mutation, natural selection, and genetic drift. The work translates the original C++ research code into Python, accelerates large-population simulations with PyTorch on GPUs, and validates results against the original models.</li>
+      <li>Maintain scientific software stacks and bioinformatics databases for genomics research across ASU; troubleshoot job, software, and hardware issues in real time.</li>
+      <li>Integrate HPC account management with the university registration database for automated account provisioning, and customize the Open OnDemand portal to support scientific applications and agentic AI functionality.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="title">Graduate Research Assistant</span><span class="date">Jan 2022 – Dec 2023</span></div>
+    <div class="org">Efrem Lim Lab, ASU Biodesign Institute — Tempe, AZ</div>
+    <ul class="bullets">
+      <li>Served on the Arizona Department of Health Services COVID-19 Sequencing Project team; built an ETL pipeline managing sequencing data for over one-third of Arizona’s COVID-19 patient population at the time and reporting results to government agencies and hospitals.</li>
+      <li>Built a generalizable genomic workflow that identified two novel bat coronaviruses from 250 raw samples on ASU HPC.</li>
+      <li>Developed an explainable neural network pipeline for microbiome-based classification of COVID-19 patient samples (400 features), using a multilayer perceptron (mean AUC 0.75) with SHAP for feature importance.</li>
+      <li>Designed a DBSCAN-based clustering workflow to establish the true-positive threshold for KrakenUniq classification output.</li>
+      <li>Contributed to an open-source Python package for model-agnostic feature reduction methods.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="title">Research Assistant</span><span class="date">Jun 2021 – Jan 2022</span></div>
+    <div class="org">School of Sustainable Engineering and the Built Environment, ASU — Tempe, AZ</div>
+    <ul class="bullets">
+      <li>Built IoT enclosures for mobile weather stations, wiring twelve analog and digital sensors to Arduino Uno and Raspberry Pi.</li>
+      <li>Built a real-time Adafruit data dashboard integrating MQTT, Google Drive, and SQLite for data logging and visualization.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="title">Research Assistant</span><span class="date">Sep 2020 – Jun 2021</span></div>
+    <div class="org">School of Mathematical and Statistical Sciences, ASU — Tempe, AZ</div>
+    <ul class="bullets">
+      <li>Designed an undergraduate machine learning curriculum (MAT 400-level) that has been taught at ASU since Fall 2021.</li>
+      <li>Modeled COVID-19 transmission patterns by applying spectral clustering to 50,000 rows of U.S. population mobility data.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="head"><span class="title">Software Development and Testing Intern</span><span class="date">May 2020 – Aug 2020</span></div>
+    <div class="org">Autowise.ai &amp; Boschung — Chandler, AZ &amp; Chicago, IL</div>
+    <ul class="bullets">
+      <li>Designed and executed software and hardware tests for a self-driving robotic street sweeper, resolving issues found in virtual and real-world road trials, and reported findings and recommendations to the R&amp;D and Business teams.</li>
+      <li>Led relocation of the full test set from Chandler to Chicago, including establishing a new test environment, producing new LiDAR maps, and training personnel for ongoing operations.</li>
+    </ul>
+  </div>
+
+  <h3>Earlier research experience</h3>
+  <ul class="rows">
+    <li><span><b>Research Assistant</b>, <span class="org">ASU Biodesign Institute</span></span><span class="date">Sep 2019 – Jan 2020</span></li>
+    <li><span><b>Research Affiliate</b>, <span class="org">Mayo Clinic</span></span><span class="date">Sep 2018 – Apr 2019</span></li>
+    <li><span><b>Research Assistant</b>, <span class="org">Chinese Academy of Sciences</span></span><span class="date">Apr 2014 – Jan 2018</span></li>
+    <li><span><b>Team Leader &amp; Speaker</b>, <span class="org">iGEM Competition, Team WHU-China</span> <span class="note">(Silver Medal)</span></span><span class="date">Jan 2014 – Sep 2015</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Publications</h2>
+
+  <h3>Conference &amp; workshop papers</h3>
+  <ol class="refs">
+    <li><span class="me">N. T. Mu</span>, et al. “Balancing Workload Performance and Slurm Stress: Four Nextflow Deployment Strategies.” <span class="venue">HPCSYSPROS Workshop at SC26</span>, 2026. Accepted; linked preprint is an earlier version. <a class="id" href="https://arxiv.org/abs/2608.13824">arXiv:2608.13824</a></li>
+    <li><span class="me">N. T. Mu</span>, et al. “Ten Practices for Refactoring Scientific Pipelines to nf-core DSL2 on Shared Slurm HPC.” <span class="venue nw">US-RSE’26</span>. Long paper. <a class="id" href="https://doi.org/10.5281/zenodo.22921770">doi:10.5281/zenodo.22921770</a></li>
+    <li>D. Jennewein, …, <span class="me">N. T. Mu</span>, …, Y.-M. Byun. “Provisioning a Large-Scale AI Platform Composed of Intel Gaudi2 Accelerators at Arizona State University.” <span class="venue nw">PEARC’26</span>. Long paper. <a class="id" href="https://doi.org/10.1145/3785462.3815814">doi:10.1145/3785462.3815814</a></li>
+    <li><span class="me">N. T. Mu</span>, et al. “Optimizing Nextflow-based Software on Shared HPC Resources: A Case Study with make_lastz_chains.” <span class="venue nw">US-RSE’25</span>. Long paper. <a class="id" href="https://doi.org/10.5281/zenodo.17118383">doi:10.5281/zenodo.17118383</a></li>
+  </ol>
+
+  <h3>Peer-reviewed journal articles</h3>
+  <ol class="refs">
+    <li>A. Žuštra, V. R. Leonard, L. A. Holland, J. C. Hu, <span class="me">T. Mu</span>, …, E. S. Lim. “Longitudinal dynamics of the nasopharyngeal microbiome in response to SARS-CoV-2 Omicron variant and HIV infection in Kenyan women and their children.” <span class="venue">mSystems</span>, <span class="nw">May 2025</span>. <a class="id" href="https://doi.org/10.1128/msystems.01568-24">doi:10.1128/msystems.01568-24</a></li>
+    <li>M. F. Smith, S. C. Holland, M. B. Lee, …, <span class="me">T. Mu</span>, …, E. S. Lim. “Baseline Sequencing Surveillance of Public Clinical Testing, Hospitals, and Community Wastewater Reveals Rapid Emergence of SARS-CoV-2 Omicron Variant of Concern in Arizona, USA.” <span class="venue">mBio</span>, <span class="nw">Feb 2023</span>. <a class="id" href="https://doi.org/10.1128/mbio.03101-22">doi:10.1128/mbio.03101-22</a></li>
+    <li>G.-R. Wu, <span class="me">T.-C. Mu</span>, Z.-X. Gao, J. Wang, M.-S. Sy, C.-Y. Li. “Prion protein is required for tumor necrosis factor alpha (TNFα)-triggered nuclear factor kappa B (NF-κB) signaling and cytokine production.” <span class="venue">Journal of Biological Chemistry</span>, <span class="nw">Sep 2017</span>. <span class="note">JBC Recommended Read, <span class="nw">Oct 2017</span>.</span> <a class="id" href="https://doi.org/10.1074/jbc.M117.787283">doi:10.1074/jbc.M117.787283</a></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Presentations</h2>
+  <ol class="refs">
+    <li>“HPL (Linpack) and Other Popular Benchmarks on Heterogeneous HPC Clusters.” <span class="venue">RMACC HPC Symposium</span>, Boise, ID, <span class="nw">May 2026</span>.</li>
+    <li>“Tuning Workflow Management Systems for Shared HPC Resources.” <span class="venue">RMACC HPC Symposium</span>, Boise, ID, <span class="nw">May 2026</span>.</li>
+    <li>“A Clinical Decision Support System Based on Prescription Drug Monitoring Programs for Patient Pain Management.” Poster. <span class="venue">5th Annual Mayo Clinic–ASU BMI/BMD Student Poster and Employer Networking Event</span>, Phoenix, AZ, <span class="nw">Apr 2019</span>.</li>
+    <li>“A DNA Criticality-Detector Circuit in <i>E. coli</i> for Automatic Medicine-Dosage Thresholds.” Poster &amp; slides. <span class="venue">iGEM 2015 Jamboree</span>, Boston, MA, <span class="nw">Sep 2015</span>.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Grants &amp; Awards</h2>
+  <ul class="rows">
+    <li><span><b>SC Early Career Program &amp; Travel Grant</b>, SC26</span><span class="date">2026</span></li>
+    <li><span><b>CCMNet Travel Grant</b>, Cyberinfrastructure Community-wide Mentorship Network, PEARC’26</span><span class="date">2026</span></li>
+    <li><span><b>RMACC Scholarship</b>, RMACC HPC Symposium</span><span class="date">2026</span></li>
+    <li><span><b>US-RSE Travel Grant</b>, US-RSE’26</span><span class="date">2026</span></li>
+    <li><span><b>US-RSE Travel Grant</b>, US-RSE’25</span><span class="date">2025</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Professional Service</h2>
+  <ul class="rows">
+    <li><span><b>Committee Member</b>, <a class="link" href="https://www.earthbiogenome.org/it-informatics">Scientific Subcommittee on IT and Informatics</a>, Earth BioGenome Project</span><span class="date">2026 – Present</span></li>
+    <li><span><b>Co-organizer</b>, “<a class="link" href="https://sc26.conference-program.com/presentation/?id=bof215&amp;sess=sess395">Operational Data Analytics: Agentic AI for HPC Facilities</a>,” Birds of a Feather session, SC26</span><span class="date">2026</span></li>
+    <li><span><b>ASU Cluster Representative</b>, Energy Efficient HPC Working Group (EE HPC WG), analyzing HPC power and water usage</span><span class="date"></span></li>
+    <li><span><b>Grant Reviewer</b>, NAIRR Pilot Project</span><span class="date">2026</span></li>
+  </ul>
+  <h3>Teaching &amp; mentoring</h3>
+  <ul class="rows">
+    <li><span><b>Mentor</b>, “<a class="link" href="https://ccmnet.org/mentorships/tuning-workflow-management-system-shared-hpc-resources">Tuning Workflow Management System on Shared HPC Resources</a>,” CCMNet mentorship program</span><span class="date">2026 – Present</span></li>
+    <li><span><b>Cyberinfrastructure Facilitator</b>, <a class="link" href="https://ciren.asu.edu/research/">CIREN project</a></span><span class="date">2026</span></li>
+    <li><span><b>Certified Instructor</b>, The Carpentries</span><span class="date">2024 – Present</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <ul class="rows">
+    <li><span><b>CyberAmbassadors Program Certificate</b>, Engineering Futures</span><span class="date">2025</span></li>
+    <li><span><b>Linux Cluster Institute Certificates</b>, entry and intermediate levels</span><span class="date">2024</span></li>
+  </ul>
+</section>
+
+</body>
+</html>
